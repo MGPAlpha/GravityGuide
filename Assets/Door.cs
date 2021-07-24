@@ -8,6 +8,9 @@ public class Door : MonoBehaviour
     private Animator an;
     
     [SerializeField] private bool open = false;
+    [SerializeField] private bool locked = true;
+
+    private bool proximity = false;
 
     public void Open() {
         open = true;
@@ -24,11 +27,34 @@ public class Door : MonoBehaviour
         an.SetBool("open", open);
     }
 
+    public void Lock() {
+        locked = true;
+        an.SetBool("locked", true);
+        an.SetBool("open", open);
+    }
+
+    public void Unlock() {
+        locked = false;
+        an.SetBool("locked", false);
+        an.SetBool("open", proximity);
+    }
+
+    public void TriggerProximity() {
+        proximity = true;
+        if (!locked) an.SetBool("open", true);
+    }
+
+    public void UntriggerProximity() {
+        proximity = false;
+        if (!locked) an.SetBool("open", false);
+    }
+
     void Start()
     {
         an = GetComponent<Animator>();
+        an.SetBool("locked", locked);
         an.SetBool("open", open);
-        an.Play("Door " + (open ? "Open" : "Closed"));
+        an.Play("Door " + (locked ? (open ? "Open" : "Locked") : "Closed"));
     }
 
     // Update is called once per frame
