@@ -34,8 +34,13 @@ public class EventTimer : MonoBehaviour
             if (timeElapsed > timerLength) {
                 timerOn = false;
                 onTimeout.Invoke();
-                Debug.Log("Timer");
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        CustomGizmos.DrawEventTargets(transform.position, onTimeout, Color.yellow);
+        Gizmos.DrawIcon(transform.position, "Timer");
     }
 }

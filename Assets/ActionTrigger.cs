@@ -24,4 +24,9 @@ public class ActionTrigger : MonoBehaviour
             onTrigger.Invoke();
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        CustomGizmos.DrawEventTargets(transform.position, onTrigger, Color.cyan);
+    }
 }
