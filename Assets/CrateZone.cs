@@ -8,6 +8,8 @@ public class CrateZone : MonoBehaviour
     [SerializeField] private UnityEvent onTrigger;
     [SerializeField] private UnityEvent onUntrigger;
     [SerializeField] private LayerMask triggerLayers;
+
+    [SerializeField] private bool showGizmos = true;
     
     private int triggerCount = 0;
 
@@ -40,6 +42,17 @@ public class CrateZone : MonoBehaviour
             if (triggerCount == 0) {
                 if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
             }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (showGizmos) {
+            if (triggerLayers == (triggerLayers | (1 << LayerMask.NameToLayer("Player")))) {
+                Gizmos.DrawIcon(transform.position, "Player Zone");
+            }
+            CustomGizmos.DrawEventTargets(transform.position, onUntrigger, Color.red);
+            CustomGizmos.DrawEventTargets(transform.position, onTrigger, Color.green);
         }
     }
 }
