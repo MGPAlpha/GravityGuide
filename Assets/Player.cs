@@ -76,7 +76,10 @@ public class Player : MonoBehaviour
         if (controlsEnabled) CheckInput();
         // aura.transform.localScale = new Vector3(auraSize, auraSize, 0);
         aura.transform.rotation = Quaternion.Euler (0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
-        aura.GetComponent<SpriteRenderer>().material.SetVector("_OverlayDirection", ((Vector4)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)).normalized);
+        Vector2 arrowVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float arrowDir = Vector2.Angle(arrowVec, Vector2.down);
+        if (arrowVec.x > 0) arrowDir = 360 - arrowDir;
+        aura.GetComponent<SpriteRenderer>().material.SetFloat("_ArrowAngle", arrowDir * 3.14f / 180);
     }
 
     private void FixedUpdate()
