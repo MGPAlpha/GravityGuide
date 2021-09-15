@@ -29,7 +29,7 @@ From that point, the basic workflow for adding new content to the repo will be:
 Once you've made your changes, like adding a new mechanic or building a new level:
 
 1. Add all the files you changed to staging: `git add Assets/changedfile1 Assets/changedfile2 ...`
-    a. Note that your version of `ProjectSettings/ProjectVersion.txt` will have changes if you are using a newer release of Unity, so don't add that file, or any file that isn't in `Assets/` unless I you know what you're doing.
+    * Note that your version of `ProjectSettings/ProjectVersion.txt` will have changes if you are using a newer release of Unity, so don't add that file, or any file that isn't in `Assets/` unless I you know what you're doing.
 1. Write the staged changes to a new commit: `git commit -m "Describe your changes here"`
 1. Push the changes to a new branch on your forked repository: `git push -u feat/your-feature-name`
 1. Go to your forked repo on Github and make a pull request to merge your changes into MGPAlpha/GravityGuide:main
