@@ -59,6 +59,9 @@ public class Player : MonoBehaviour
     [SerializeField] private bool primaryEnabled = true;
     [SerializeField] private bool secondaryEnabled = true;
     [SerializeField] private bool controlsEnabled = true;
+
+    private bool aimSnap = false;
+    [SerializeField] private int aimSnapCount = 8;
     
     // Start is called before the first frame update
     void Start()
@@ -70,13 +73,29 @@ public class Player : MonoBehaviour
         capsuleColliderSize = cc.size;
     }
 
+    private Vector2 GetAim() {
+        Vector2 aim = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        if (aimSnap) {
+            float angle = Vector2.Angle(aim, Vector2.up);
+            if (aim.x < 0) angle = 360 - angle;
+            // Debug.Log(angle);
+            angle = angle * aimSnapCount / (360);
+            angle = angle + .5f;
+            angle = Mathf.Floor(angle);
+            Debug.Log(angle);
+            angle = angle * (2*Mathf.PI) / aimSnapCount;
+            aim = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+        }
+        return aim.normalized;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (controlsEnabled) CheckInput();
         // aura.transform.localScale = new Vector3(auraSize, auraSize, 0);
         aura.transform.rotation = Quaternion.Euler (0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
-        Vector2 arrowVec = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector2 arrowVec = GetAim();
         float arrowDir = Vector2.Angle(arrowVec, Vector2.down);
         if (arrowVec.x > 0) arrowDir = 360 - arrowDir;
         aura.GetComponent<SpriteRenderer>().material.SetFloat("_ArrowAngle", arrowDir * 3.14f / 180);
@@ -110,6 +129,8 @@ public class Player : MonoBehaviour
     private void CheckInput()
     {
         if (Input.GetKeyDown(KeyCode.E)) interactionManager.Interact();
+
+        aimSnap = Input.GetKey(KeyCode.LeftShift);
         
         xInput = getXInput();
 
@@ -199,7 +220,7 @@ public class Player : MonoBehaviour
     }
 
     private void ActivateGravity(bool self) {
-        Vector2 newGravityDir = ((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)).normalized;
+        Vector2 newGravityDir = GetAim();
         if (self) gravity = newGravityDir * gravity.magnitude;
         aura.GetComponent<Aura>().AlterGravity(Physics.gravity.magnitude * newGravityDir);
     }
