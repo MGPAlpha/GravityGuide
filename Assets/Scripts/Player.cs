@@ -78,11 +78,9 @@ public class Player : MonoBehaviour
         if (aimSnap) {
             float angle = Vector2.Angle(aim, Vector2.up);
             if (aim.x < 0) angle = 360 - angle;
-            // Debug.Log(angle);
             angle = angle * aimSnapCount / (360);
             angle = angle + .5f;
             angle = Mathf.Floor(angle);
-            Debug.Log(angle);
             angle = angle * (2*Mathf.PI) / aimSnapCount;
             aim = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
         }

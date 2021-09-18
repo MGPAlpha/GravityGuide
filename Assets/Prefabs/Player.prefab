@@ -126,6 +126,7 @@ MonoBehaviour:
   primaryEnabled: 1
   secondaryEnabled: 1
   controlsEnabled: 1
+  aimSnapCount: 16
 --- !u!50 &4303327535892352940
 Rigidbody2D:
   serializedVersion: 4
