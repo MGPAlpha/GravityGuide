@@ -1,0 +1,85 @@
+name: check_build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    # we can safely inline the required unity license file because we're just using the free "personal" version
+    env:
+      UNITY_LICENSE: |-
+        <?xml version="1.0" encoding="UTF-8"?><root>
+            <License id="Terms">
+                <MachineBindings>
+                    <Binding Key="1" Value="576562626572264761624c65526f7578"/>
+                    <Binding Key="2" Value="576562626572264761624c65526f7578"/>
+                </MachineBindings>
+                <MachineID Value="D7nTUnjNAmtsUMcnoyrqkgIbYdM="/>
+                <SerialHash Value="409288cabd831beda71d8992acbad42c9c5c6763"/>
+                <Features>
+                    <Feature Value="33"/>
+                    <Feature Value="1"/>
+                    <Feature Value="12"/>
+                    <Feature Value="2"/>
+                    <Feature Value="24"/>
+                    <Feature Value="3"/>
+                    <Feature Value="36"/>
+                    <Feature Value="17"/>
+                    <Feature Value="19"/>
+                    <Feature Value="62"/>
+                </Features>
+                <DeveloperData Value="AQAAAEY0LUMyWDQtV0NIVi1ORDVILVE3MjUtRDVaUw=="/>
+                <SerialMasked Value="F4-C2X4-WCHV-ND5H-Q725-XXXX"/>
+                <StartDate Value="2021-09-21T00:00:00"/>
+                <UpdateDate Value="2021-09-22T23:15:37"/>
+                <InitialActivationDate Value="2021-09-21T23:15:35"/>
+                <LicenseVersion Value="6.x"/>
+                <ClientProvidedVersion Value="2019.2.11f1"/>
+                <AlwaysOnline Value="false"/>
+                <Entitlements>
+                    <Entitlement Ns="unity_editor" Tag="UnityPersonal" Type="EDITOR" ValidTo="9999-12-31T00:00:00"/>
+                    <Entitlement Ns="unity_editor" Tag="DarkSkin" Type="EDITOR_FEATURE" ValidTo="9999-12-31T00:00:00"/>
+                </Entitlements>
+            </License>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#Terms"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>5jOlTistVftu7zTqKgVjWDu9tCU=</DigestValue></Reference></SignedInfo><SignatureValue>xj1QOap8If0AONvmkXIq4MXAHsP5OwGAsyZvbLYbNnorJBUzt4OZGYtqadmef4Cx5oPIsTdtM6Ll&#13;
+        c3mrlAH1ayhJI0JBFRxai+xi+Hq7dHezi9aFNrSZU7julWWhphTVd0JpWQXhnnn3pmyfdMQAVhlX&#13;
+        bpGSLWpjZT4vU1FpT1aj2t9OVv33PwzaNYWXvSMQDsok+pWxjQJme5OXDzbwJCIL+K39yZUYiCZF&#13;
+        sL9Zu11e1JJcIBWaqBAiPWYgZzPUUvwKf9YIXjxFhnfGkmc6nO9PJmhFxkxhhPj9QybGLryU4pIO&#13;
+        Rw5D5xqmvSqflBfNPIj0hVgPK97s/yd7ZvzZ1w==</SignatureValue></Signature></root>
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          # build on both Linux and Windows since game could possibly build for one platform but not the other
+          # in the future we may want to enable more platforms so that we can then automatically deploy the latest build
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          # - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          # - iOS # Build an iOS player.
+          # - Android # Build an Android .apk standalone app.
+          # - WebGL # WebGL.
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+      # for now we just want to make sure that the game builds
+      # later, we can un-comment this part if we want to save the build output somewhere
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: Build-${{ matrix.targetPlatform }}
+      #     path: build/${{ matrix.targetPlatform }}
