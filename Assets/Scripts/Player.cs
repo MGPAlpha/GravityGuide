@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Player : MonoBehaviour
+public class Player : GravityObject
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private float groundCheckRadius;
@@ -39,11 +39,11 @@ public class Player : MonoBehaviour
 
     private Vector2 slopeNormalPerp;
 
-    private Rigidbody2D rb;
+    // private Rigidbody2D rb;
     private CapsuleCollider2D cc;
     private Aura a;
 
-    [SerializeField] private Vector2 gravity = new Vector2(4,-10);
+    // [SerializeField] private Vector2 personalGravity = new Vector2(4,-10);
 
     [SerializeField] private float auraSize = 5f;
     [SerializeField] private GameObject aura;
@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // rb = GetComponent<Rigidbody2D>();
+        base.Start();
         cc = GetComponent<CapsuleCollider2D>();
         a = aura.GetComponent<Aura>();
 
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0,0,Vector2.Angle(gravity, Vector2.down) * (gravity.x > 0 ? 1 : -1));
+        transform.rotation = Quaternion.Euler(0,0,Vector2.Angle(personalGravity, Vector2.down) * (personalGravity.x > 0 ? 1 : -1));
         CheckGround();
         SlopeCheck();
         ApplyMovement();
@@ -109,7 +110,7 @@ public class Player : MonoBehaviour
 
     private float getXInput() {
         xInput = 0;
-        float gravityAngle = Vector2.Angle(gravity, Vector2.down);
+        float gravityAngle = Vector2.Angle(personalGravity, Vector2.down);
         if (gravityAngle < 67.5) {
             xInput += Input.GetAxisRaw("Horizontal");
         }
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
         }
 
         if (gravityAngle > 22.5 && gravityAngle < 157.5) {
-            xInput += Input.GetAxisRaw("Vertical") * (gravity.x > 0 ? 1 : -1);
+            xInput += Input.GetAxisRaw("Vertical") * (personalGravity.x > 0 ? 1 : -1);
         }
         return Mathf.Clamp(xInput, -1, 1);
     }
@@ -219,7 +220,7 @@ public class Player : MonoBehaviour
 
     private void ActivateGravity(bool self) {
         Vector2 newGravityDir = GetAim();
-        if (self) gravity = newGravityDir * gravity.magnitude;
+        if (self) personalGravity = newGravityDir * personalGravity.magnitude;
         aura.GetComponent<Aura>().AlterGravity(Physics.gravity.magnitude * newGravityDir);
     }
 
@@ -227,7 +228,7 @@ public class Player : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if(Vector2.Dot(rb.velocity, -gravity.normalized) <= 0.0f)
+        if(Vector2.Dot(rb.velocity, -personalGravity.normalized) <= 0.0f)
         {
             isJumping = false;
         }
@@ -296,7 +297,7 @@ public class Player : MonoBehaviour
 
             slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;            
 
-            slopeDownAngle = Vector2.Angle(hit.normal, -gravity.normalized);
+            slopeDownAngle = Vector2.Angle(hit.normal, -personalGravity.normalized);
 
             if(slopeDownAngle != lastSlopeAngle)
             {
@@ -335,10 +336,10 @@ public class Player : MonoBehaviour
         {
             canJump = false;
             isJumping = true;
-            newVelocity.Set(0.0f, 0.0f);
-            rb.velocity = newVelocity;
+            // newVelocity.Set(0.0f, 0.0f);
+            // rb.velocity = newVelocity;
             // newForce.Set(0.0f, jumpForce);
-            newForce = jumpForce * -gravity.normalized;
+            newForce = jumpForce * -personalGravity.normalized;
             rb.AddForce(newForce, ForceMode2D.Impulse);
         }
     }   
@@ -378,11 +379,27 @@ public class Player : MonoBehaviour
             }
 
             // newVelocity.Set(movementSpeed * xInput, rb.velocity.y);
-            newVelocity = Vector2.Dot(rb.velocity, gravity.normalized) * gravity.normalized + movementSpeed * wallAdjustedXInput * Vector2.Perpendicular(gravity.normalized);
             
+            // rb.velocity = newVelocity;
+
+            float rotatedXVel = Vector2.Dot(rb.velocity, Vector2.Perpendicular(personalGravity.normalized));
+            float newRotatedXVel = rotatedXVel;
+            if (wallAdjustedXInput == 0) {
+                newRotatedXVel = Mathf.MoveTowards(newRotatedXVel, 0, movementSpeed * Time.fixedDeltaTime * 5 / 3);
+                Debug.Log(newRotatedXVel);
+            } else {
+                newRotatedXVel = newRotatedXVel + movementSpeed * wallAdjustedXInput * Time.fixedDeltaTime * 5;
+                newRotatedXVel = Mathf.Clamp(newRotatedXVel, -movementSpeed, movementSpeed);
+            }
+
+
+            newVelocity = Vector2.Dot(rb.velocity, personalGravity.normalized) * personalGravity.normalized + newRotatedXVel * Vector2.Perpendicular(personalGravity.normalized);
+
             rb.velocity = newVelocity;
 
-            rb.velocity += gravity * Time.fixedDeltaTime;
+            // rb.velocity += movementSpeed * wallAdjustedXInput * Vector2.Perpendicular(personalGravity.normalized) * Time.fixedDeltaTime * 10;
+
+            rb.velocity += personalGravity * Time.fixedDeltaTime;
         }
 
     }
