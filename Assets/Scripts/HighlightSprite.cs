@@ -10,7 +10,7 @@ public class HighlightSprite : MonoBehaviour
     private SpriteRenderer sp;
     
     public void SetHighlight(bool active) {
-        sp.color = active ? highlightColor : Color.white;
+        GetComponent<SpriteRenderer>().material.SetInt("_Outline", active? 1 : 0);
     }
 
     // Start is called before the first frame update
