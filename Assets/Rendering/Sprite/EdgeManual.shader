@@ -146,9 +146,11 @@ Shader "Alan Tao/Edge Manual"
                     luminosity.a = floor(luminosity.a * 4) / 4;
                     // apply light as coloring
                     luminosity.rgb = luminosity.rgb * luminosity.a;
-                    
+
+                    half4 main_lighting = CombinedShapeLightShared(main, mask, i.lightingUV);
+
                     // overlay coloring to main sprite
-                    main.rgb = main.rgb + luminosity.rgb;
+                    main.rgb = main_lighting.rgb + luminosity.rgb;
 
                     return main;
                 }
