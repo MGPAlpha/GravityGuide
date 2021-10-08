@@ -8,7 +8,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: fab13a433f07f4530a43d34642ca6012
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: 1c2e88eacea0c0cda9196178d08eb862
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Gravity Zone/Gravity Zone Demo.unity
+    guid: 6dfcfaa3f060d113a9aa7b244e4e599e
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Light Barrier/Light Barrier Demo 3.unity
+    guid: 1396cd91074c17b0faf0eef499bd0f72
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Tethered Crate/Chain Intro.unity
+    guid: 19aee4abda3efc648a778a80b860f4b4
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Gravity Zone/ResetZoneLevel.unity
+    guid: 36d951325ca111c45b729864ff405c8b
+  - enabled: 0
+    path: Assets/Scenes/Mechanic Levels/Tethered Crate/Gravity Zone Level.unity
+    guid: 4c3d411691eb14041ac13b95a420eb32
+  - enabled: 0
+    path: Assets/Scenes/Mechanic Levels/Light Barrier/Light Barrier Demo 2.unity
+    guid: 2489d7abfcad21bda85aec634ee33f8f
+  - enabled: 0
+    path: Assets/Scenes/Mechanic Levels/Tethered Crate/Chain Level 2.unity
+    guid: e947cf712c495164b84ea995e4a4ab61
+  - enabled: 0
+    path: Assets/Scenes/Mechanic Levels/Tethered Crate/ChainLevel.unity
+    guid: 9c0a97bb00a845f41b8213b011e83cab
+  - enabled: 0
+    path: Assets/Scenes/Mechanic Levels/Light Barrier/Light Barrier Demo.unity
+    guid: 062be157bb115113e96c5e7755018be1
   m_configObjects: {}
