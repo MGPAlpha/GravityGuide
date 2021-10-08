@@ -6,8 +6,6 @@ using UnityEditor;
 
 public class AdvanceLevel : MonoBehaviour
 {
-    
-    [SerializeField] public SceneAsset nextLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +20,7 @@ public class AdvanceLevel : MonoBehaviour
     }
 
     public void LoadNextLevel() {
-        if (nextLevel) {
-            SceneManager.LoadScene(nextLevel.name);
-        } else {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
