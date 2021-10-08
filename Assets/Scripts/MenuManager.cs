@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
     public void Play() {
 
     //Put this in whenever you want to load a scene
-    SceneManager.LoadScene("Start");
+    SceneManager.LoadScene(1);
     Time.timeScale = 1;
     }
 
