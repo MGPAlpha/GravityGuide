@@ -18,8 +18,8 @@ TagManager:
   - Door
   - Interactible
   - InteractionManager
-  - 
-  - 
+  - CrateBarrier
+  - PlayerBarrier
   - 
   - 
   - 
