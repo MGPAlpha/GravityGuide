@@ -13,6 +13,8 @@ public class CrateZone : MonoBehaviour
     
     private int triggerCount = 0;
 
+    private List<GameObject> triggers = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,15 @@ public class CrateZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (GameObject trigger in triggers) {
+            if (triggerLayers != (triggerLayers | (1 << trigger.gameObject.layer))) {
+                triggers.Remove(trigger);
+                triggerCount--;
+                if (triggerCount == 0) {
+                    if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +42,7 @@ public class CrateZone : MonoBehaviour
                 if (onTrigger.GetPersistentEventCount() > 0) onTrigger.Invoke();
             }
             triggerCount++;
+            triggers.Add(other.gameObject);
         }
     }
 
@@ -42,6 +53,7 @@ public class CrateZone : MonoBehaviour
             if (triggerCount == 0) {
                 if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
             }
+            triggers.Remove(other.gameObject);
         }
     }
 
