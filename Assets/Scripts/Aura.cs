@@ -38,7 +38,6 @@ public class Aura : MonoBehaviour
     public void AlterGravity(Vector2 newGravity) {
         foreach (GravityObject g in currentGravityObjects) {
             if (!g) continue;
-            Debug.Log(g.name);
             g.personalGravity = newGravity;
         }
     }
