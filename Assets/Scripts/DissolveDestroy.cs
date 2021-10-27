@@ -6,14 +6,19 @@ public class DissolveDestroy : MonoBehaviour
 {
 
     [SerializeField] private float dissolveTime = 1;
+    [SerializeField] private float maxSpeedDuringDissolve = 2;
 
     private bool dissolving = false;
     private float dissolveProgress = 0;
 
+    private Rigidbody2D _rb;
+    private Renderer _re;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rb = GetComponent<Rigidbody2D>();
+        _re = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -21,7 +26,10 @@ public class DissolveDestroy : MonoBehaviour
     {
         if (dissolving) {
             dissolveProgress += Time.deltaTime;
-            GetComponent<Renderer>().material.SetFloat("_Dissolve", dissolveProgress / dissolveTime);
+            if (_rb && _rb.velocity.magnitude > maxSpeedDuringDissolve) {
+                _rb.velocity = _rb.velocity.normalized * maxSpeedDuringDissolve;
+            }
+            if (_re) _re.material.SetFloat("_Dissolve", dissolveProgress / dissolveTime);
             if (dissolveProgress >= dissolveTime) {
                 Destroy(gameObject);
             }
