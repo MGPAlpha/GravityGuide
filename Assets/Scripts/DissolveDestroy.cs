@@ -30,6 +30,6 @@ public class DissolveDestroy : MonoBehaviour
 
     public void Dissolve() {
         dissolving = true;
-        gameObject.layer = LayerMask.NameToLayer("Default");
+        gameObject.layer = LayerMask.NameToLayer("Dissolving");
     }
 }
