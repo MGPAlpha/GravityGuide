@@ -386,7 +386,6 @@ public class Player : GravityObject
             float newRotatedXVel = rotatedXVel;
             if (wallAdjustedXInput == 0) {
                 newRotatedXVel = Mathf.MoveTowards(newRotatedXVel, 0, movementSpeed * Time.fixedDeltaTime * 5 / 3);
-                Debug.Log(newRotatedXVel);
             } else {
                 newRotatedXVel = newRotatedXVel + movementSpeed * wallAdjustedXInput * Time.fixedDeltaTime * 5;
                 newRotatedXVel = Mathf.Clamp(newRotatedXVel, -movementSpeed, movementSpeed);
