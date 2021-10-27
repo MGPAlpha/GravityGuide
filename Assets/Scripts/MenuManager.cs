@@ -37,6 +37,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Title");
     }
 
+    public void Reset() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public bool paused {
         get;
         private set;
