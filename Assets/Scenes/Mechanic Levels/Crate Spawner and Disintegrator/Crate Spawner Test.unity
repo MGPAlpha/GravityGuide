@@ -10397,6 +10397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ingame Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 8729201909678823934, guid: a829163cdde03c48495765349e48ed51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a829163cdde03c48495765349e48ed51, type: 3}
 --- !u!114 &1879742058 stripped
