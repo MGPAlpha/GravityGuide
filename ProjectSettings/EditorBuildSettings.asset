@@ -9,17 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: fab13a433f07f4530a43d34642ca6012
   - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Crate Spawner and Disintegrator/Crate Spawner
+      Test.unity
+    guid: 28597ca69b00609b585d8767089cf0f7
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Gravity Zone/Gravity Zone Demo.unity
+    guid: 6dfcfaa3f060d113a9aa7b244e4e599e
+  - enabled: 1
+    path: Assets/Scenes/Mechanic Levels/Tethered Crate/Chain Intro.unity
+    guid: 19aee4abda3efc648a778a80b860f4b4
+  - enabled: 0
     path: Assets/Scenes/Start.unity
     guid: 1c2e88eacea0c0cda9196178d08eb862
   - enabled: 0
-    path: Assets/Scenes/Mechanic Levels/Gravity Zone/Gravity Zone Demo.unity
-    guid: 6dfcfaa3f060d113a9aa7b244e4e599e
-  - enabled: 0
     path: Assets/Scenes/Mechanic Levels/Light Barrier/Light Barrier Demo 3.unity
     guid: 1396cd91074c17b0faf0eef499bd0f72
-  - enabled: 0
-    path: Assets/Scenes/Mechanic Levels/Tethered Crate/Chain Intro.unity
-    guid: 19aee4abda3efc648a778a80b860f4b4
   - enabled: 0
     path: Assets/Scenes/Mechanic Levels/Gravity Zone/ResetZoneLevel.unity
     guid: 36d951325ca111c45b729864ff405c8b
