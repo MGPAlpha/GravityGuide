@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a2cfbe3ea390d488b061fc727e6500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoStartGravity: 1
+  personalGravity: {x: 0, y: 0}
   movementSpeed: 10
   groundCheckRadius: 0.4
   jumpForce: 10
@@ -111,13 +113,12 @@ MonoBehaviour:
   groundCheck: {fileID: 4303327536524994946}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 18176
   noFriction: {fileID: 6200000, guid: d2d7b14a60f785982b3aadc7d6f5dbc5, type: 2}
   fullFriction: {fileID: 6200000, guid: 7719325c40ed71e14a5125d73f0de0c3, type: 2}
   eTrigger:
     m_PersistentCalls:
       m_Calls: []
-  gravity: {x: 0, y: -30}
   auraSize: 5
   aura: {fileID: 4303327537219748196}
   auraPrimary: {r: 0, g: 0.84967804, b: 1, a: 1}

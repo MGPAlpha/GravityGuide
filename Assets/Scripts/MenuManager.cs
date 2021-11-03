@@ -8,7 +8,10 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(PlayerPrefs.GetInt("levelProgress"));
+        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
+            PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     // Update is called once per frame
@@ -24,8 +27,14 @@ public class MenuManager : MonoBehaviour
     public void Play() {
 
     //Put this in whenever you want to load a scene
-    SceneManager.LoadScene("Start");
+    SceneManager.LoadScene(1);
     Time.timeScale = 1;
+    }
+
+    public void Continue() {
+        if (PlayerPrefs.GetInt("levelProgress") > 0);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
     }
 
     public void Quit() {
@@ -35,6 +44,16 @@ public class MenuManager : MonoBehaviour
     public void Menu() {
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
+    }
+
+    public void Reset() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ContinueFromSave() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
     }
 
     public bool paused {
