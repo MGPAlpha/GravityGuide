@@ -41048,6 +41048,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 322248673340230859, guid: eddc392114dcca644b686faa99dff7de,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 322248673340230859, guid: eddc392114dcca644b686faa99dff7de,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1406669482052051552, guid: eddc392114dcca644b686faa99dff7de,
         type: 3}
       propertyPath: m_RootOrder
@@ -41108,10 +41118,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: TetheredCrate
       objectReference: {fileID: 0}
-    - target: {fileID: 6270240617622058946, guid: eddc392114dcca644b686faa99dff7de,
+    - target: {fileID: 1771471807068002582, guid: eddc392114dcca644b686faa99dff7de,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771471807068002582, guid: eddc392114dcca644b686faa99dff7de,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eddc392114dcca644b686faa99dff7de, type: 3}
