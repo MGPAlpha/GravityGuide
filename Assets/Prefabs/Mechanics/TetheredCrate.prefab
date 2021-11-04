@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1406669482052051552}
   - component: {fileID: 1406669482052051553}
   - component: {fileID: 1406669482052051555}
-  - component: {fileID: 5379368799331073711}
   - component: {fileID: 6270240617622058946}
   m_Layer: 0
   m_Name: TetheredCrate
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 19cc10a8ccdde6444aca9f73f209ba09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,25 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!232 &5379368799331073711
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406669482052051558}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1567822619993741994}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 3
-  m_MaxDistanceOnly: 0
 --- !u!233 &6270240617622058946
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -151,8 +131,8 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
---- !u!255 &729581749039684437
-FixedJoint2D:
+--- !u!233 &322248673340230859
+HingeJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,11 +144,35 @@ FixedJoint2D:
   m_ConnectedRigidBody: {fileID: 176375426862477452}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 1.5}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: -0.5}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
+--- !u!256 &1771471807068002582
+FrictionJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567822619993741992}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 176375426862477452}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: -0.5}
+  m_MaxForce: 1
+  m_MaxTorque: 1
 --- !u!1 &6020907251914732747
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +185,6 @@ GameObject:
   - component: {fileID: 5890342719039459502}
   - component: {fileID: 176375426862477452}
   - component: {fileID: 2793332927702561234}
-  - component: {fileID: 5712834905552026759}
   m_Layer: 0
   m_Name: Beam
   m_TagString: Untagged
@@ -222,7 +225,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f90b9b1e3d2493b41b93056c06799278, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,10 +245,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
-    type: 3}
-  m_Color: {r: 0.7169812, g: 0.40178, b: 0.40178, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8e4b002b82d629132a747d34357c5251, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -294,24 +296,6 @@ FrictionJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_MaxForce: 1
   m_MaxTorque: 10
---- !u!255 &5712834905552026759
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6020907251914732747}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1567822619993741994}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: -0.53}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1001 &1406669480588438589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,12 +389,6 @@ GameObject:
 --- !u!4 &1567822619993741989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 452462423003625112, guid: b9319015c82fb843da636a1e2579582f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1406669480588438589}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1567822619993741994 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 452462423003625111, guid: b9319015c82fb843da636a1e2579582f,
     type: 3}
   m_PrefabInstance: {fileID: 1406669480588438589}
   m_PrefabAsset: {fileID: 0}
