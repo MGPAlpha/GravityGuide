@@ -9,3 +9,4 @@
 *.physicsMaterial2D eol=lf
 *.prefab eol=lf
 *.unity eol=lf
+*.shader eol=lf
