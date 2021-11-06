@@ -22,13 +22,13 @@ MonoBehaviour:
   m_CornerSprites:
   - m_CornerType: 0
     m_Sprites:
-    - {fileID: -7603680215866307243, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
+    - {fileID: -6384463445773428931, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
   - m_CornerType: 1
     m_Sprites:
-    - {fileID: -5395533884110393067, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
+    - {fileID: -6384463445773428931, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
   - m_CornerType: 2
     m_Sprites:
-    - {fileID: -3914956229736046475, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
+    - {fileID: -6384463445773428931, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
   - m_CornerType: 3
     m_Sprites:
     - {fileID: -6384463445773428931, guid: 0bad71b927f5e91469d7a136c340951f, type: 3}
