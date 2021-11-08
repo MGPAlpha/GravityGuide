@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
   m_Name: Placeholder
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3ca81e2349c31441aa2acf1181f045b0, type: 3}
   startTime: 0
-  endTime: 0
-  subtitles: 
+  endTime: 1
+  subtitles: '*placeholder*'
