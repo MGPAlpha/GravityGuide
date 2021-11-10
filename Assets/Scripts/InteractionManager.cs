@@ -18,7 +18,7 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        FindTarget();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,11 +26,7 @@ public class InteractionManager : MonoBehaviour
         if (((1 << other.gameObject.layer) | interactibleLayers) == interactibleLayers) {
             Interactible newInter = other.GetComponent<Interactible>();
             inRange.Add(newInter);
-            if ((!target || newInter.GetPriority() >= target.GetPriority()) && newInter.CanTarget()) {
-                if (target) target.Detarget();
-                target = newInter;
-                target.Target();
-            }
+            FindTarget();
         }
     }
 
@@ -39,21 +35,29 @@ public class InteractionManager : MonoBehaviour
         if (((1 << other.gameObject.layer) | interactibleLayers) == interactibleLayers) {
             Interactible oldInter = other.GetComponent<Interactible>();
             inRange.Remove(oldInter);
-            if (target == oldInter) {
-                target.Detarget();
-                FindTarget();
-            }
+            // if (target == oldInter) {
+            //     target.Detarget();
+            //     FindTarget();
+            // }
         }
     }
 
     private void FindTarget() {
-        if (inRange.Count <= 0) target = null;
+        if (inRange.Count <= 0) {
+            if (target) target.Detarget();
+            target = null;
+        }
         else {
+            Interactible oldTarget = target;
             target = null;
             foreach (Interactible inter in inRange) {
-                if ((!target || inter.GetPriority() > target.GetPriority()) && inter.CanTarget()) target = inter;
+                if ((!target || inter.GetPriority() > target.GetPriority() 
+                || (inter.GetPriority() == target.GetPriority() && (inter.transform.position - transform.position).magnitude < (target.transform.position - transform.position).magnitude)) && inter.CanTarget()) target = inter;
             }
-            if (target) target.Target();
+            if (target != oldTarget) {
+                if (target) target.Target();
+                if (oldTarget) oldTarget.Detarget();
+            }
         }
     }
 
