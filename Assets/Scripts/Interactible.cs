@@ -39,6 +39,10 @@ public class Interactible : MonoBehaviour
         return priority;
     }
 
+    public void SetInteractible(bool inter) {
+        active = inter;
+    }
+
     void Start()
     {
         
