@@ -133,6 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   showGizmos: 1
+  borderFillSpeed: 2
 --- !u!114 &7870955122258052929
 MonoBehaviour:
   m_ObjectHideFlags: 0

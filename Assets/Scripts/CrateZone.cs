@@ -15,10 +15,17 @@ public class CrateZone : MonoBehaviour
 
     private List<GameObject> triggers = new List<GameObject>();
 
+    [SerializeField] private float borderFillSpeed = 1f;
+
+    private float borderFill = .5f;
+    private float borderFillTarget = .5f;
+
+    private SpriteRenderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -30,9 +37,12 @@ public class CrateZone : MonoBehaviour
                 triggerCount--;
                 if (triggerCount == 0) {
                     if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                    borderFillTarget = .5f;
                 }
             }
         }
+        borderFill = Mathf.MoveTowards(borderFill, borderFillTarget, borderFillSpeed * Time.deltaTime);
+        renderer.material.SetFloat("_BorderFill", borderFill);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +50,7 @@ public class CrateZone : MonoBehaviour
         if (triggerLayers == (triggerLayers | (1 << other.gameObject.layer))) {
             if (triggerCount == 0) {
                 if (onTrigger.GetPersistentEventCount() > 0) onTrigger.Invoke();
+                    borderFillTarget = 1;
             }
             triggerCount++;
             triggers.Add(other.gameObject);
@@ -52,6 +63,7 @@ public class CrateZone : MonoBehaviour
             triggerCount--;
             if (triggerCount == 0) {
                 if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                borderFillTarget = .5f;
             }
             triggers.Remove(other.gameObject);
         }
