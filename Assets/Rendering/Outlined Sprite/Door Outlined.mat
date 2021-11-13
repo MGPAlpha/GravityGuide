@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outlined Sprite
+  m_Name: Door Outlined
   m_Shader: {fileID: -6465566751694194690, guid: 6f2afd9cb13b10b4580e77429a12cbc4,
     type: 3}
   m_ShaderKeywords: 
@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_426b8a6838d4464b9d9608b316d47b8b: 0
-    - Boolean_f84a3f6383c94b44996e744d27da5abb: 1
+    - Boolean_f84a3f6383c94b44996e744d27da5abb: 0
     - Vector1_8163127d319141c485b8439b0ef6b8c1: 1
     - _Outline: 0
     m_Colors:
