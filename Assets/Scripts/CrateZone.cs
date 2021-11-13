@@ -25,7 +25,7 @@ public class CrateZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        TryGetComponent<SpriteRenderer>(out renderer);
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class CrateZone : MonoBehaviour
             }
         }
         borderFill = Mathf.MoveTowards(borderFill, borderFillTarget, borderFillSpeed * Time.deltaTime);
-        renderer.material.SetFloat("_BorderFill", borderFill);
+        if (renderer) renderer.material.SetFloat("_BorderFill", borderFill);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
