@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story Levels/1.1 Introduction.unity
     guid: b24850b0ac03585a3ad5695a6ee80005
+  - enabled: 1
+    path: Assets/Scenes/Story Levels/1.2 The Presentation.unity
+    guid: 27451eb23af12761f9948d2384bf1ea3
   m_configObjects: {}
