@@ -26,6 +26,9 @@ public class MenuManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
             PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
         }
+        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
+            PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     // Update is called once per frame
@@ -40,15 +43,17 @@ public class MenuManager : MonoBehaviour
 
     public void Play() {
 
-    //Put this in whenever you want to load a scene
-    SceneManager.LoadScene(1);
-    Time.timeScale = 1;
+        //Put this in whenever you want to load a scene
+        SceneManager.LoadScene(1);
+        PlayerPrefs.SetInt("levelProgress", 1);
+        Time.timeScale = 1;
     }
 
     public void Continue() {
-        if (PlayerPrefs.GetInt("levelProgress") > 0);
-        Time.timeScale = 1;
-        SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
+        if (PlayerPrefs.GetInt("levelProgress") > 0) {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
+        }
     }
 
     public void Quit() {
