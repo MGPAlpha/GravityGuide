@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +7,12 @@ public class CrateZone : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTrigger;
     [SerializeField] private UnityEvent onUntrigger;
+    [SerializeField] private UnityEvent onToggle;
     [SerializeField] private LayerMask triggerLayers;
+
+    [SerializeField] private bool singleUse = false;
+
+    private bool usedOnce = false;
 
     [SerializeField] private bool showGizmos = true;
     
@@ -36,8 +41,12 @@ public class CrateZone : MonoBehaviour
                 triggers.Remove(trigger);
                 triggerCount--;
                 if (triggerCount == 0) {
-                    if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                    if (!singleUse || !usedOnce) {
+                        if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                        if (onToggle.GetPersistentEventCount() > 0) onToggle.Invoke();
+                    }
                     borderFillTarget = .5f;
+                    usedOnce = true;
                 }
             }
         }
@@ -49,8 +58,11 @@ public class CrateZone : MonoBehaviour
     {
         if (triggerLayers == (triggerLayers | (1 << other.gameObject.layer))) {
             if (triggerCount == 0) {
-                if (onTrigger.GetPersistentEventCount() > 0) onTrigger.Invoke();
-                    borderFillTarget = 1;
+                if (!singleUse || !usedOnce) {
+                    if (onTrigger.GetPersistentEventCount() > 0) onTrigger.Invoke();
+                    if (onToggle.GetPersistentEventCount() > 0) onToggle.Invoke();
+                }
+                borderFillTarget = 1;
             }
             triggerCount++;
             triggers.Add(other.gameObject);
@@ -62,8 +74,12 @@ public class CrateZone : MonoBehaviour
         if (triggerLayers == (triggerLayers | (1 << other.gameObject.layer))) {
             triggerCount--;
             if (triggerCount == 0) {
-                if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                if (!singleUse || !usedOnce) {
+                    if (onUntrigger.GetPersistentEventCount() > 0) onUntrigger.Invoke();
+                    if (onToggle.GetPersistentEventCount() > 0) onToggle.Invoke();
+                }
                 borderFillTarget = .5f;
+                usedOnce = true;
             }
             triggers.Remove(other.gameObject);
         }
@@ -77,6 +93,7 @@ public class CrateZone : MonoBehaviour
             }
             CustomGizmos.DrawEventTargets(transform.position, onUntrigger, Color.red);
             CustomGizmos.DrawEventTargets(transform.position, onTrigger, Color.green);
+            CustomGizmos.DrawEventTargets(transform.position, onToggle, Color.blue);
         }
     }
 }

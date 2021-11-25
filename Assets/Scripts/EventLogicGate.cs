@@ -13,6 +13,7 @@ public class EventLogicGate : MonoBehaviour
 
     [SerializeField] private UnityEvent onActivate;
     [SerializeField] private UnityEvent onDeactivate;
+    [SerializeField] private UnityEvent onToggle;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class EventLogicGate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void CheckInputs() {
@@ -44,6 +45,7 @@ public class EventLogicGate : MonoBehaviour
         if (oldActivated != activated) {
             UnityEvent relevantEvent = activated ? onActivate : onDeactivate;
             if (relevantEvent.GetPersistentEventCount() > 0) relevantEvent.Invoke();
+            if (onToggle.GetPersistentEventCount() > 0) onToggle.Invoke();
         }
     }
 
@@ -52,6 +54,7 @@ public class EventLogicGate : MonoBehaviour
         Gizmos.DrawIcon(transform.position, isAndGate ? "And Gate" : "Or Gate");
         CustomGizmos.DrawEventTargets(transform.position, onDeactivate, Color.red);
         CustomGizmos.DrawEventTargets(transform.position, onActivate, Color.green);
+        CustomGizmos.DrawEventTargets(transform.position, onToggle, Color.blue);
     }
 
     public void SetInput(int index, bool value) {
