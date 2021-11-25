@@ -127,6 +127,13 @@ public class Player : GravityObject
     
     private void CheckInput()
     {
+        if (MenuManager._mm.paused) {
+            primaryStarted = false;
+            secondaryStarted = false;
+            a.ActivateAura(false);
+            return;
+        }
+        
         if (Input.GetKeyDown(KeyCode.E)) interactionManager.Interact();
 
         aimSnap = Input.GetKey(KeyCode.LeftShift);
