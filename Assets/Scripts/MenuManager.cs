@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -19,15 +20,19 @@ public class MenuManager : MonoBehaviour
         }
     }
     
+    [SerializeField] private Button continueButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("levelProgress"));
         if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
             PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
         }
         if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
             PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+        }
+        if (continueButton && PlayerPrefs.GetInt("levelProgress") < 1) {
+            continueButton.interactable = false;
         }
     }
 
