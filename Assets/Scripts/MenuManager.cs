@@ -5,6 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager _mm {
+        get;
+        private set;
+    }
+    
+    private void Awake()
+    {
+        if (_mm == null || _mm.gameObject == null) {
+            _mm = this;
+        } else {
+            Destroy(this);
+        }
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +86,7 @@ public class MenuManager : MonoBehaviour
             paused = true;
             if (pauseMenu) pauseMenu.SetActive(true);
         } else {
-            Time.timeScale = lastTimeScale;
+            Time.timeScale = 1;
             paused = false;
             if (pauseMenu) pauseMenu.SetActive(false);
         }
