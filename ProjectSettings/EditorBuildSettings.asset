@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story Levels/1.4 Distance Modulation Fields.unity
     guid: 3754092e674d8ba1cb0d718f721b1334
+  - enabled: 1
+    path: Assets/Scenes/Story Levels/2.1 Gravity Zones.unity
+    guid: e773dfc16d208455f8d6283d5830279f
+  - enabled: 1
+    path: Assets/Scenes/Story Levels/2.2 Light Barriers.unity
+    guid: e327ab0996ba61aa7a126a8de4ba10a5
   m_configObjects: {}
