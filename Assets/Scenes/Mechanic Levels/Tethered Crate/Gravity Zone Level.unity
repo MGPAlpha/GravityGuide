@@ -11454,6 +11454,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
       objectReference: {fileID: 0}
@@ -11863,6 +11878,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
       objectReference: {fileID: 0}
@@ -12243,6 +12268,16 @@ PrefabInstance:
       propertyPath: onUntrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905691, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905691, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5176525342425905700, guid: b39ba37b4297af0b195c152978afc21f,
         type: 3}
       propertyPath: m_Size.x
@@ -12257,6 +12292,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
         type: 3}
@@ -12535,6 +12580,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5176525342425905701, guid: b39ba37b4297af0b195c152978afc21f,
         type: 3}
