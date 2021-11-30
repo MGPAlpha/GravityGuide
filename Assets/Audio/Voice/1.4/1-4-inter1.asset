@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 1-4-inter1
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 068f0ea9fc514a375ade3938ff371382, type: 3}
+  startTime: 26.5
+  endTime: 37.5
+  subtitles: '[Asimov]: Ok! You seem to have a basic understanding of the DMF''s.
+    The next test is going to be a little more complex.
+
+    <t=33>[Hazel Marsh]:
+    Alexis, this is only my first time sitting in on a testing session, but I think
+    you''re doing a great job!'
