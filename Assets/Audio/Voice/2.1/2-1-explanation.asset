@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-1-explanation
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 601e38cc9282e8e6e972b57e78a30434, type: 3}
+  startTime: 50
+  endTime: 133
+  subtitles: '[Hazard]: So, normally, the force of gravity is based on mass and distance.
+    The more massive something is, the stronger its gravity is. The closer you are
+    to it, the stronger its gravity pulls on you.
+
+    <t=63>Well, our gravity tech
+    uses something called quantum entanglement to link the molecules of whatever
+    it affects to a location close to a random celestial body. It effectively tricks
+    the universe into thinking you''re much closer to something with gravity in a
+    different direction, and therefore you experience gravity as if you were there.
+
+    <t=82>So
+    when you use your gravity manipulators to go upwards, you''re actually being
+    pulled by the gravity of some random star, thousands of lightyears away.
+
+    <t=92>[Hazel]:
+    Why does it have to be so far away? Why not just use the moon or something?
+
+    <t=96>[Asimov]:
+    Newton''s third law. Every action has an equal and opposite reaction. When something
+    exerts a force on you, you also exert a force on it.
+
+    <t=104>If we used the
+    same object''s gravity every time, we could have an unwanted impact on it''s
+    overall trajectory. If we used the moon, for example, there''s a chance we could
+    accidentally pull it onto a collision course with the Earth.
+
+    <t=114>We were
+    actually so concerned about that even being possible that we hard coded it into
+    the algorithm, so that it would only use celestial bodies further away than the
+    moon.
+
+    <t=122>[Hazel]: Oh, that doesn''t sound good.
+
+    <t=126>[Hazard]:
+    Yeah, some of this tech could have catastrophic effects if misused. It''s a miracle
+    that the government doesn''t regulate us at all.'

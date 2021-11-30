@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-1-inter1
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 601e38cc9282e8e6e972b57e78a30434, type: 3}
+  startTime: 37
+  endTime: 49
+  subtitles: '[Hazard]: You''re probably wondering how all this gravity tech works.
+
+    <t=42>[Asimov]:
+    Haz, she doesn''t want to hear the technical details.
+
+    <t=45>[Hazard]: I''m
+    not going to get super technical, just the basics, I promise!'
