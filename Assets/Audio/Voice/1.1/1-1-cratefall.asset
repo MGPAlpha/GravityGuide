@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 1-1-cratefall
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: e659ef5e61b7d071d968882271f9c1da, type: 3}
+  startTime: 285
+  endTime: 299
+  subtitles: '[Hazard]: Oh, sorry about those crates. The shaft is used to transport
+    supplies but you should be able to go through it no problem, especially with
+    the aid of your gravity manipulators. I''ll check back in once you get out of
+    the shaft again.'
