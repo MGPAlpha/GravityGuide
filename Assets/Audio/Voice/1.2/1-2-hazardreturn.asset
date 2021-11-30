@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 1-2-hazardreturn
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 68a1eba63d931487a8b5d898adbeb1c5, type: 3}
+  startTime: 80
+  endTime: 108.5
+  subtitles: '[David Hazard]: Alright, got that sorted out.
+
+    <t=84>[Hazel]: Oh
+    Haz, you''re back!
+
+    <t=87>[Hazard]: Yeah, I got Lenny''s issue fixed. What''d
+    I miss?
+
+    <t=90>[Asimov]: We watched the orientation video that Hazel made
+    and it was... something.
+
+    <t=94>[Hazard]: Sounds like she did a great job!
+
+    <t=97>[Asimov]:
+    Uhh, sure. We can talk about this more later. Alexis is making good progress
+    on the tests though.
+
+    <t=103>[Hazard]: Oh, great! Good work, Alexis. Just
+    go on through the next door after this test, and we''ll continue.'

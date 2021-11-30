@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 1-1-intro
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: e659ef5e61b7d071d968882271f9c1da, type: 3}
+  startTime: 2
+  endTime: 46
+  subtitles: '[David Hazard]: (clears throat) Alright. Testing, testing. Are we on?
+
+    <t=8>[Dr.
+    Asimov]: Audio is live.
+
+    <t=10>[Hazard]: Good, good.
+
+    <t=13>[Hazard]:
+    Ok, Alexis? Can you hear me in there?
+
+    [Hazard]: Alexis? Can you hear me?
+
+    <t=19>[Hazard]:
+    Dr. Asimov, what''s wrong? Why isn''t she responding?
+
+    <t=24>[Asimov]: Haz,
+    we haven''t installed the onboard microphone yet.
+
+    <t=28>[Hazard]: Oh. Yeah,
+    that would explain it. Uh... what do we do now?
+
+    <t=37>[Asimov]: Ok, Alexis.
+    I''m going to enable the movement controls on your pod. You can control it using
+    the WASD keys on the keyboard in front of you. Please drive to the left side
+    of the room to show us you can hear the intercom.
+
+'
