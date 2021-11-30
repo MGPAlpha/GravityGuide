@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-2-maze
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1a019471e537ef8a396e8d951a98d2a1, type: 3}
+  startTime: 66
+  endTime: 88
+  subtitles: '[Asimov]: Ok. Now, I''m going to have you do a bit of a more complex
+    test.
+
+    <t=71>[Hazel]: Oh! I remember seeing the blueprint for this one! Alexis,
+    you''ll love this, it''s like a fun little puzzle.
+
+    <t=77>[Asimov]: Yes,
+    it''s a bit like a maze. Now, the room is full of several SLB''s of both types.
+    At the center of the room is a crate. Get that crate to the sensor zone by navigating
+    around the barriers to open the door.
+
+    <t=86>[Hazel]: Good luck!
+
+'

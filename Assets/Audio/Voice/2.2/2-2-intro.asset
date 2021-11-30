@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-2-intro
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1a019471e537ef8a396e8d951a98d2a1, type: 3}
+  startTime: 1
+  endTime: 58
+  subtitles: '[David Hazard]: I just got another message from Lenny in engineering.
+    He wants me to come look at a "weird crate" apparently. I told him its just a
+    crate, and there''s nothing to worry about but he''s pretty insistent I come
+    check it out. Dr. Asimov, you''ll have to introduce the new tech yourself, I''m
+    gonna go see what has him so worked up.
+
+    <t=19>[Hazel Marsh]: What could
+    be so weird about a crate?
+
+    <t=22>[Hazard]: I don''t know, but I''d better
+    check it out. Good luck up here.
+
+    <t=26>[Dr. Nicolette Asimov]: Ok, Alexis.
+    In these tests, you''re going to be working with Selective Light Barriers, or
+    SLB''s. Yeah, I know, another acronym. Anyway these use specially configured
+    photon patterns to create a semi-permeable barrier that only blocks  specific
+    materials and objects from passing through.
+
+    <t=42>The red one in this first
+    test only blocks crates from passing through it. Later on, you''ll see a yellow
+    one that crates can go through just fine, but it blocks your pod.
+
+    <t=50>[Hazel]:
+    These ones are my favorite piece of tech here. It''s just so cool that they can
+    use light to make something solid. Also I just think they''re pretty to look
+    at.'
