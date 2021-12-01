@@ -82,6 +82,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
     }
 
+    public void Credits() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Credits");
+    }
+
     public bool paused {
         get;
         private set;
