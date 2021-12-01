@@ -45792,6 +45792,11 @@ PrefabInstance:
       propertyPath: pauseStopsTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8729201909202614960, guid: a829163cdde03c48495765349e48ed51,
+        type: 3}
+      propertyPath: countLevelAsSave
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8729201909202614961, guid: a829163cdde03c48495765349e48ed51,
         type: 3}
       propertyPath: m_Pivot.x

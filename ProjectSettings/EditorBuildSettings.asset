@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story Levels/2.3 Hazel In Charge.unity
     guid: 47e172da7bc9ac3859a75f345eb972bb
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a3aaa1e3c0ce4129f85de9b9a350c022
   m_configObjects: {}

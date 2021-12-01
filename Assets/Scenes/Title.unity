@@ -1674,6 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de70008e03f0118b8d7102712954e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countLevelAsSave: 0
   continueButton: {fileID: 789039583}
   pauseStopsTime: 1
   canPause: 0

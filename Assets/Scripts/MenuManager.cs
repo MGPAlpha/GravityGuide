@@ -19,6 +19,8 @@ public class MenuManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    [SerializeField] private bool countLevelAsSave = true;
     
     [SerializeField] private Button continueButton;
 
@@ -27,11 +29,13 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
-            PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
-        }
-        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
-            PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+        if (countLevelAsSave) {
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
+                PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
+            }
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
+                PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+            }
         }
         if (continueButton && PlayerPrefs.GetInt("levelProgress") < 1) {
             continueButton.interactable = false;
