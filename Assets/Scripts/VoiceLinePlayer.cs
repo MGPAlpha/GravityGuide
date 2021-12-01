@@ -44,6 +44,12 @@ public class VoiceLinePlayer : MonoBehaviour
                 subtitleIndex++;
                 SubtitleManager._sm.ShowSubtitle(subs[subtitleIndex].text);
             }
+            if (Input.GetKeyDown(KeyCode.Backspace)) {
+                playing = false;
+                SubtitleManager._sm.Hide();
+                audioSource.Stop();
+                if (onFinish.GetPersistentEventCount() > 0) onFinish.Invoke();
+            }
         }
     }
 
