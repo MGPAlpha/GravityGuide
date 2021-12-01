@@ -19,6 +19,7 @@ public class Door : MonoBehaviour
     private bool proximity = false;
 
     public void Open() {
+        if (open) return;
         open = true;
         an.SetBool("open", true);
         if (locked && aud) {
@@ -28,6 +29,7 @@ public class Door : MonoBehaviour
     }
 
     public void Close() {
+        if (!open) return;
         open = false;
         an.SetBool("open", false);
         if (locked && aud) {
@@ -46,6 +48,7 @@ public class Door : MonoBehaviour
     }
 
     public void Lock() {
+        if (locked) return;
         locked = true;
         an.SetBool("locked", true);
         an.SetBool("open", open);
@@ -56,6 +59,7 @@ public class Door : MonoBehaviour
     }
 
     public void Unlock() {
+        if (!locked) return;
         locked = false;
         an.SetBool("locked", false);
         an.SetBool("open", proximity);
