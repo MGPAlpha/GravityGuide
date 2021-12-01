@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-1-intro
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 601e38cc9282e8e6e972b57e78a30434, type: 3}
+  startTime: 0
+  endTime: 37
+  subtitles: '[David Hazard]: Ok, it''s time to show you something new. In this test,
+    you''ll be working with Directional Gravity Fields, or DGF''s.
+
+    <t=9>[Hazel
+    Marsh]: You might have noticed Hazard has a habit of giving things three letter
+    acronyms.
+
+    <t=12>[Hazard]: I do not!
+
+    <t=15>[Hazel]: Haz, a few minutes
+    ago you showed her the DMF''s, and now you''re talking about DGF''s. You have
+    a problem.
+
+    <t=20>[Hazard]: Well, if you hate my acronyms so much, you can
+    just call them Gravity Fields!
+
+    <t=25>[Dr. Nicolette Asimov]: Well regardless
+    of the name, anything that enters a Gravity Field while it''s turned on will
+    be affected by gravity in the direction of the field until it leaves. I''m sure
+    you can figure it out. We''ll check in with you again after you complete this
+    next test.'

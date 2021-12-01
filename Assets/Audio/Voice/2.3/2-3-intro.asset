@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-3-intro
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 89006c628b17646ab8675706391abf83, type: 3}
+  startTime: 0
+  endTime: 42
+  subtitles: '[Hazel Marsh]: Dr. Asimov, have you heard anything from Haz about that
+    weird crate?
+
+    <t=5>[Dr. Nicolette Asimov]: Actually, I just got a message
+    from him. He wants me to come down to help. He can''t figure out what''s wrong
+    with it or what to do with it.
+
+    <t=11>[Hazel]: What? It''s just a crate!
+    What is there to figure out?
+
+    <t=15>[Asimov]: I don''t know! I guess I''d
+    better go and take a look. Can you hold the fort here? Just guide Alexis through
+    the next few tests until I get back.
+
+    <t=22>[Hazel]: Oh, uh, sure. I guess.
+
+    <t=25>[Asimov]:
+    Ok, great. I''ll be back as soon as possible.
+
+    <t=31>[Hazel]: Ok, Alexis.
+    Soooo I''m pretty new to the testing. This is my first time working directly
+    in the beta testing. I''m not really sure what the next tests are about, so I
+    guess just go through them as best you can.'
