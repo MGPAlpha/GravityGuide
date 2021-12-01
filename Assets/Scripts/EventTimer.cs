@@ -15,15 +15,26 @@ public class EventTimer : MonoBehaviour
 
     [SerializeField] private UnityEvent onTimeout;
 
+    [SerializeField] private bool doSound = false;
+    [SerializeField] private AudioClip timerTick;
+    [SerializeField] private AudioClip timerDing;
+
+    private AudioSource _as;
+
 
     void Start()
     {
         if (runAtStart) StartTimer();
+        TryGetComponent<AudioSource>(out _as);
     }
 
     public void StartTimer() {
+        bool alreadyStarted = timerOn;
         timerOn = true;
         timeElapsed = 0;
+        if (_as && doSound && !alreadyStarted) {
+            _as.Play();
+        }
     }
 
     // Update is called once per frame
@@ -34,6 +45,10 @@ public class EventTimer : MonoBehaviour
             if (timeElapsed > timerLength) {
                 timerOn = false;
                 onTimeout.Invoke();
+                if (_as) {
+                    _as.Stop();
+                    if (timerDing && doSound) _as.PlayOneShot(timerDing);
+                }
             }
         }
     }

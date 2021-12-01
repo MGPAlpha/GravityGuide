@@ -8,17 +8,21 @@ public class DissolveDestroy : MonoBehaviour
     [SerializeField] private float dissolveTime = 1;
     [SerializeField] private float maxSpeedDuringDissolve = 2;
 
+    [SerializeField] private AudioClip dissolveEffect;
+
     private bool dissolving = false;
     private float dissolveProgress = 0;
 
     private Rigidbody2D _rb;
     private Renderer _re;
+    private AudioSource _as;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _re = GetComponent<Renderer>();
+        TryGetComponent<AudioSource>(out _as);
     }
 
     // Update is called once per frame
@@ -39,5 +43,8 @@ public class DissolveDestroy : MonoBehaviour
     public void Dissolve() {
         dissolving = true;
         gameObject.layer = LayerMask.NameToLayer("Dissolving");
+        if (_as && dissolveEffect) {
+            _as.PlayOneShot(dissolveEffect);
+        }
     }
 }

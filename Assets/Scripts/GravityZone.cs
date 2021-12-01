@@ -11,6 +11,11 @@ public class GravityZone : MonoBehaviour
 
     [SerializeField] private float gravityFadeTime = .5f;
 
+    private AudioSource _as;
+
+    [SerializeField] private AudioClip powerOnEffect;
+    [SerializeField] private AudioClip powerDownEffect;
+
     private bool gravityOn;
     private float gravityShaderProgress = 1;
     
@@ -23,6 +28,7 @@ public class GravityZone : MonoBehaviour
         gravityOn = startOn;
         sp.material.SetFloat("_GravityOn", gravityOn ? 1 : 0);
         gravityShaderProgress = gravityOn ? 1 : 0;
+        TryGetComponent<AudioSource>(out _as);
     }
 
     // Update is called once per frame
@@ -46,7 +52,14 @@ public class GravityZone : MonoBehaviour
     }
 
     public void SetOn(bool on) {
+        bool changed = on != gravityOn;
         gravityOn = on;
+        if (_as && changed) {
+            AudioClip clip = on ? powerOnEffect : powerDownEffect;
+            _as.Stop();
+            _as.clip = clip;
+            if (clip)_as.Play();
+        }
     }
 
     public void TurnOn() {

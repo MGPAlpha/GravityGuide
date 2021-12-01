@@ -14,6 +14,11 @@ public class LightBarrier : MonoBehaviour
     private SpriteRenderer sp;
     private Collider2D col;
 
+    private AudioSource _as;
+
+    [SerializeField] private AudioClip powerOnEffect;
+    [SerializeField] private AudioClip powerDownEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +28,7 @@ public class LightBarrier : MonoBehaviour
         sp.material.SetFloat("_Active", barrierOn ? 1 : 0);
         col.enabled = barrierOn;
         shaderProgress = barrierOn ? 1 : 0;
+        TryGetComponent<AudioSource>(out _as);
     }
 
     // Update is called once per frame
@@ -33,8 +39,15 @@ public class LightBarrier : MonoBehaviour
     }
 
     public void SetOn(bool on) {
+        bool changed = on != barrierOn;
         barrierOn = on;
         col.enabled = on;
+        if (_as && changed) {
+            AudioClip clip = on ? powerOnEffect : powerDownEffect;
+            _as.Stop();
+            _as.clip = clip;
+            if (clip)_as.Play();
+        }
     }
 
     public void TurnOn() {
