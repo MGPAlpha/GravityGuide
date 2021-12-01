@@ -127,7 +127,7 @@ public class Player : GravityObject
     
     private void CheckInput()
     {
-        if (MenuManager._mm.paused) {
+        if (MenuManager._mm && MenuManager._mm.paused) {
             primaryStarted = false;
             secondaryStarted = false;
             a.ActivateAura(false);
