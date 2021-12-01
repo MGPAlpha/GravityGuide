@@ -47,5 +47,11 @@ public class OpacityFade : MonoBehaviour
             newColor.a = Mathf.Lerp(0,1,fade / fadeDur);
             child.color = newColor;
         }
+
+        CanvasGroup _cg;
+        TryGetComponent<CanvasGroup>(out _cg);
+        if (_cg) {
+            _cg.alpha = Mathf.Lerp(0,1,fade / fadeDur);
+        }
     }
 }

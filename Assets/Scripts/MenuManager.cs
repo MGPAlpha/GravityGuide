@@ -19,17 +19,23 @@ public class MenuManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    [SerializeField] private bool countLevelAsSave = true;
     
     [SerializeField] private Button continueButton;
+
+    [SerializeField] private bool pauseStopsTime = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
-            PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
-        }
-        if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
-            PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+        if (countLevelAsSave) {
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("levelProgress")) {
+                PlayerPrefs.SetInt("levelProgress", SceneManager.GetActiveScene().buildIndex);
+            }
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("maxLevelProgress")) {
+                PlayerPrefs.SetInt("maxLevelProgress", SceneManager.GetActiveScene().buildIndex);
+            }
         }
         if (continueButton && PlayerPrefs.GetInt("levelProgress") < 1) {
             continueButton.interactable = false;
@@ -80,6 +86,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
     }
 
+    public void Credits() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Credits");
+    }
+
     public bool paused {
         get;
         private set;
@@ -92,11 +103,11 @@ public class MenuManager : MonoBehaviour
     public void Pause() {
         if (!paused) {
             lastTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+            if (pauseStopsTime) Time.timeScale = 0;
             paused = true;
             if (pauseMenu) pauseMenu.SetActive(true);
         } else {
-            Time.timeScale = 1;
+            if (pauseStopsTime) Time.timeScale = 1;
             paused = false;
             if (pauseMenu) pauseMenu.SetActive(false);
         }
