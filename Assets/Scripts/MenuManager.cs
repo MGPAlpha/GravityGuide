@@ -22,6 +22,8 @@ public class MenuManager : MonoBehaviour
     
     [SerializeField] private Button continueButton;
 
+    [SerializeField] private bool pauseStopsTime = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,11 +94,11 @@ public class MenuManager : MonoBehaviour
     public void Pause() {
         if (!paused) {
             lastTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+            if (pauseStopsTime) Time.timeScale = 0;
             paused = true;
             if (pauseMenu) pauseMenu.SetActive(true);
         } else {
-            Time.timeScale = 1;
+            if (pauseStopsTime) Time.timeScale = 1;
             paused = false;
             if (pauseMenu) pauseMenu.SetActive(false);
         }
