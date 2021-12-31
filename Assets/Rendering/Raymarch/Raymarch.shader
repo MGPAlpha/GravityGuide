@@ -187,8 +187,8 @@ Shader "Unlit/Raymarch"
                 float2 posterizeUV = floor(i.uv * posterizeScale) / posterizeScale;
 
                 // camera
-                float3 ro = _CameraPos.xyz;
-                float3 rd = normalize(float3((i.uv-float2(.5, .5)), 1));
+                float3 ro = _CameraPos.xyz + float3((i.uv - float2(.5, .5)) * 5, 0);
+                float3 rd = normalize(float3(0, 0, 1));
                 
                 float d = rayMarch(ro, rd);
 
