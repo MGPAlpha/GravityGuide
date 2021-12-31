@@ -63,6 +63,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Story Levels/3.1 Moon Crisis Begins.unity
     guid: adba52e98bd8eee6f8a153976d078234
   - enabled: 1
+    path: Assets/Scenes/Story Levels/3.2 Arrival On The Moon.unity
+    guid: 2238a08b0622805f1bfa32e448b52c7b
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: a3aaa1e3c0ce4129f85de9b9a350c022
   m_configObjects: {}
