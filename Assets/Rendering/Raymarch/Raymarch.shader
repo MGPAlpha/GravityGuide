@@ -5,6 +5,8 @@ Shader "Unlit/Raymarch"
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Main Color", Color) = (1,1,1,1)
         _CameraPos ("Camera Position", Vector) = (0,0,-6,0)
+        _RotSpeeds ("Rotation Speeds", Vector) = (.15, .21, .35, 2)
+        _RotStarts ("Rotation Speeds", Vector) = (0, 0, 0, 0)
     }
     SubShader
     {
@@ -43,6 +45,8 @@ Shader "Unlit/Raymarch"
             float4 _MainTex_ST;
             float4 _Color;
             float4 _CameraPos;
+            float4 _RotSpeeds;
+            float4 _RotStarts;
 
             v2f vert (appdata v)
             {
@@ -79,10 +83,10 @@ Shader "Unlit/Raymarch"
             }
 
             float getDist(float3 p) {
-                float time1 = _Time.z * 0.15;
-                float time2 = _Time.z * 0.21;
-                float time3 = _Time.z * 0.35;
-                float time4 = _Time.z * 2;
+                float time1 = _Time.y * _RotSpeeds.x + _RotStarts.x;
+                float time2 = _Time.y * _RotSpeeds.y + _RotStarts.y;
+                float time3 = _Time.y * _RotSpeeds.z + _RotStarts.z;
+                float time4 = _Time.y * _RotSpeeds.a + _RotStarts.a;
                 float3x3 rot90degMat = float3x3(
                     1,  0,  0,
                     0,  0,  1,

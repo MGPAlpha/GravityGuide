@@ -24,5 +24,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
-    m_Colors: []
+    m_Colors:
+    - _CameraPos: {r: 0, g: 0, b: -6, a: 0}
+    - _Color: {r: 0.338871, g: 0, b: 1, a: 1}
+    - _RotSpeeds: {r: 2, g: 2, b: 2, a: 4}
+    - _RotStarts: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
