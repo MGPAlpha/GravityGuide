@@ -11,6 +11,10 @@ public class SignalAmplifier : MonoBehaviour
 
     private Vector4 activations = new Vector4(0,0,0,1);
 
+    [SerializeField] private float activationTime = 5f;
+    private float activationProgress = 0;
+    private bool colorActivated = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,14 @@ public class SignalAmplifier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (colorActivated) {
+            activationProgress = Mathf.MoveTowards(activationProgress, activationTime, Time.deltaTime);
+        }
+        _re.material.SetFloat("_ActivationProgress", activationProgress / activationTime);
+    }
+
+    public void ActivateColor() {
+        colorActivated = true;
     }
 
     public void ActivateRing1() {

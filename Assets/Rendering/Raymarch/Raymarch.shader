@@ -7,6 +7,7 @@ Shader "Unlit/Raymarch"
         _CameraPos ("Camera Position", Vector) = (0,0,-6,0)
         _RotSpeeds ("Rotation Speeds", Vector) = (.15, .21, .35, 2)
         _RotStarts ("Rotation Speeds", Vector) = (0, 0, 0, 0)
+        _ActivationProgress ("Activation Progress", Range (0,1)) = 0
     }
     SubShader
     {
@@ -47,6 +48,7 @@ Shader "Unlit/Raymarch"
             float4 _CameraPos;
             float4 _RotSpeeds;
             float4 _RotStarts;
+            float _ActivationProgress;
 
             v2f vert (appdata v)
             {
@@ -205,8 +207,9 @@ Shader "Unlit/Raymarch"
                 float light = getLight(p);
 
                 // return half4(max(light,0).xxx, 1);
-                return half4(getNormal(p) * float3(.5, .5, -1) + float3(.5,.5,0), step(0, light));
-                return half4(_Color.xyz, max(light,0));
+                float4 col1 = half4(_Color.xyz, max(light,0));
+                float4 col2 = half4(getNormal(p) * float3(.5, .5, -1) + float3(.5,.5,0), step(0, light));
+                return lerp(col1, col2, _ActivationProgress);
             }
             ENDCG
         }
