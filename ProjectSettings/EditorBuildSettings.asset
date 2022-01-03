@@ -66,6 +66,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Story Levels/3.2 Arrival On The Moon.unity
     guid: 2238a08b0622805f1bfa32e448b52c7b
   - enabled: 1
+    path: Assets/Scenes/Story Levels/3.3 Core Sector.unity
+    guid: da87b09e3e739bf6f9db73ce0d0ebd8f
+  - enabled: 1
+    path: Assets/Scenes/Story Levels/3.4 The Signal Amplifier.unity
+    guid: cde31682db87761f5b31bb67134e10c8
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: a3aaa1e3c0ce4129f85de9b9a350c022
   m_configObjects: {}
