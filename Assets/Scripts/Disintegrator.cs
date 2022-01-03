@@ -21,9 +21,9 @@ public class Disintegrator : MonoBehaviour
         GetComponent<Renderer>().material.SetFloat("_Active", Mathf.InverseLerp(0, activateTime, shaderProgress));
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Got it");
-        other.GetComponent<DissolveDestroy>().Dissolve();
+    private void OnTriggerStay2D(Collider2D other) {
+        Debug.Log(other.gameObject.name);
+        if (on) other.GetComponent<DissolveDestroy>().Dissolve();
     }
 
     public void SetOn(bool isOn) {
