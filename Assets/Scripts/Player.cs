@@ -62,6 +62,8 @@ public class Player : GravityObject
 
     private bool aimSnap = false;
     [SerializeField] private int aimSnapCount = 8;
+
+    [SerializeField] private bool doAnimation = true;
     
     // Start is called before the first frame update
     void Start()
@@ -102,7 +104,7 @@ public class Player : GravityObject
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0,0,Vector2.Angle(personalGravity, Vector2.down) * (personalGravity.x > 0 ? 1 : -1));
+        if (doAnimation) transform.rotation = Quaternion.Euler(0,0,Vector2.Angle(personalGravity, Vector2.down) * (personalGravity.x > 0 ? 1 : -1));
         CheckGround();
         SlopeCheck();
         ApplyMovement();
@@ -140,9 +142,11 @@ public class Player : GravityObject
         
         xInput = getXInput();
 
-        if (xInput > 0) GetComponent<SpriteRenderer>().flipX = false;
-        if (xInput < 0) GetComponent<SpriteRenderer>().flipX = true;
-        GetComponent<Animator>().SetBool("moving", xInput != 0);
+        if (doAnimation) {
+            if (xInput > 0) GetComponent<SpriteRenderer>().flipX = false;
+            if (xInput < 0) GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<Animator>().SetBool("moving", xInput != 0);
+        }
 
         // if (xInput > 0 && facingDirection == -1)
         // {
@@ -225,7 +229,7 @@ public class Player : GravityObject
         controlsEnabled = false;
     }
 
-    private void ActivateGravity(bool self) {
+    public virtual void ActivateGravity(bool self) {
         Vector2 newGravityDir = GetAim();
         if (self) personalGravity = newGravityDir * personalGravity.magnitude;
         aura.GetComponent<Aura>().AlterGravity(Physics.gravity.magnitude * newGravityDir);

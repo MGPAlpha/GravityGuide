@@ -10,6 +10,8 @@ public class DissolveDestroy : MonoBehaviour
 
     [SerializeField] private AudioClip dissolveEffect;
 
+    [SerializeField] private DissolveSettings dissolveSettings;
+
     private bool dissolving = false;
     private float dissolveProgress = 0;
 
@@ -23,6 +25,8 @@ public class DissolveDestroy : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _re = GetComponent<Renderer>();
         TryGetComponent<AudioSource>(out _as);
+
+        if (dissolveSettings.dissolveOnStart) Dissolve();
     }
 
     // Update is called once per frame
@@ -34,7 +38,7 @@ public class DissolveDestroy : MonoBehaviour
                 _rb.velocity = _rb.velocity.normalized * maxSpeedDuringDissolve;
             }
             if (_re) _re.material.SetFloat("_Dissolve", dissolveProgress / dissolveTime);
-            if (dissolveProgress >= dissolveTime) {
+            if (dissolveSettings.destroyOnEnd && dissolveProgress >= dissolveTime) {
                 Destroy(gameObject);
             }
         }
@@ -42,7 +46,7 @@ public class DissolveDestroy : MonoBehaviour
 
     public void Dissolve() {
         dissolving = true;
-        gameObject.layer = LayerMask.NameToLayer("Dissolving");
+        if (dissolveSettings.changeLayer) gameObject.layer = LayerMask.NameToLayer("Dissolving");
         if (_as && dissolveEffect) {
             _as.PlayOneShot(dissolveEffect);
         }
