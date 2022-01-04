@@ -28,7 +28,6 @@ public class CatForce : MonoBehaviour
         timer -= Time.fixedDeltaTime;
 
         if (timer <= 0) {
-            Debug.Log("Applying Force");
             float forceAngle = Random.Range(-90,90);
             Vector2 forceDir = Quaternion.Euler(0,0,forceAngle) * -_g.personalGravity;
             _rb.AddForce(forceDir.normalized * Random.Range(minForce, maxForce));

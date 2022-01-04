@@ -16,7 +16,6 @@ public class HighlightSprite : MonoBehaviour
         if (anim) {
             anim.SetBool("Open", active);
             anim.SetFloat("speedMul", active ? 1 : -1);
-            Debug.Log(anim.GetFloat("speedMul"));
         }
     }
 
