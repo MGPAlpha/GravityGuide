@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Story Levels/2.3 Hazel In Charge.unity
     guid: 47e172da7bc9ac3859a75f345eb972bb
   - enabled: 1
+    path: Assets/Scenes/Story Levels/2.4 Strange Crate.unity
+    guid: 94ab7b6b4cf6b6f06bada556618fadc2
+  - enabled: 1
     path: Assets/Scenes/Story Levels/3.1 Moon Crisis Begins.unity
     guid: adba52e98bd8eee6f8a153976d078234
   - enabled: 1
