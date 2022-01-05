@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-4-crate-get-react
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0715597d8931cf189a292cf839278d04, type: 3}
+  startTime: 86.7
+  endTime: 105
+  subtitles: '[Hazel]: Oh yeah, that crate is acting weird. Why is it jerking around
+    like that?
+
+    <t=92>[Asimov]: We''re not sure, but we''re going to find out.
+    Alexis, now we need you to take the crate to a delivery shaft for the Hazardous
+    Materials Lab.
+
+    <t=100>The path should be pretty straightforward, just go
+    to your right from here. Make sure to keep the crate with you!'

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-4-problem
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0715597d8931cf189a292cf839278d04, type: 3}
+  startTime: 5
+  endTime: 69
+  subtitles: '[Hazel]: Oh, hi guys! Alexis, Haz and Dr. Asimov are back! Did you
+    guys figure out what was up with that crate?
+
+    <t=12>[Dr. Nicolette Asimov]:
+    Actually, that''s what we came back up for. Lenny found this really strange crate
+    in storage.
+
+    <t=17>It keeps moving around with sudden, jerky movements, and
+    it''s making weird noises. We think it might be dangerous, so we didn''t want
+    to get too close.
+
+    <t=24>[Hazel]: Oh, that doesn''t sound good. What did
+    you do with it?
+
+    <t=29>[David Hazard]: Well, nothing yet. See, our hazmat
+    team is currently on a team building retreat in the Bahamas, so we can''t get
+    them to deal with it.
+
+    <t=35>So, we got to thinking, and we realized that
+    the Gravipod is actually pretty well suited for dealing with something that''s
+    potentially dangerous.
+
+    <t=44>It''s blast resistant, radiation resistant,
+    the whole works.
+
+    <t=49>[Asimov]: So, we were thinking, what if Alexis could
+    use the Gravipod to help bring the crate to the Hazardous Materials Lab, where
+    we could safely inspect it?
+
+    <t=56>[Hazard]: Alexis, could you help us out
+    with that? The Gravipod is really the only way we can deal with this right now,
+    so it''d be a huge favor.
+
+    <t=64>[Asimov]: I can reroute you to a transport
+    room where I can send the crate so you can pick it up. Let''s get going, to your
+    right.'

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 2-4-after-first-test
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 0715597d8931cf189a292cf839278d04, type: 3}
+  startTime: 130
+  endTime: 159
+  subtitles: '[Asimov]: Hazard, how many more test rooms are there until she gets
+    to the delivery shaft?
+
+    <t=135>[Hazard]: Uhhh, I think three?
+
+    <t=138>[Asimov]:
+    Hazard, when did you have time to build this many new tests? How did I not know
+    about it?
+
+    <t=142>[Hazard]: You seemed busy, so I didn''t want to add to
+    your workload with the management for the expansion.
+
+    <t=147>[Asimov]: Hazard,
+    that''s my entire job! I''m supposed to know about these things!
+
+    [Asimov]:
+    Sorry about this, Alexis. I didn''t expect this to be so complicated.
+
+    <t=155>[Hazel]:
+    Don''t worry though, you''re doing great! Just be careful with that crate!'
