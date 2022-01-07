@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-1-hazel-return
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c518010a572041b1d92a06d8c434c4c0, type: 3}
+  startTime: 104.5
+  endTime: 287
+  subtitles: '[Hazel Marsh]: I''m back, and I brought Mel! You guys will love her,
+    she''s the sweetest thing.
+
+    <t=112>[Hazel]: Also, were you guys being serious
+    about the whole... moon thing?
+
+    <t=118>[Asimov]: (lying) What? Hazel what
+    are you talking about? The moon is fine! Nothing''s wrong and if it was it''s
+    definitely not our fault.
+
+    <t=125>[Hazel]: Doctor, the intercom was on for
+    that whole conversation. I could hear the whole thing. Alexis probably could
+    too.
+
+    [Asimov]: Oh god.
+
+    <t=134[Asimov]: Okay, Alexis? Hey, so you might
+    have heard over the intercom that the moon might be on a bit of a collision course
+    with the Earth.
+
+    <t=142>While I know that probably sounds pretty concerning,
+    I want you to know we''re gonna get everything under control soon, so don''t
+    worry.
+
+    <t=149>[Hazard]: Does that mean you have a plan?
+
+    <t=152>[Asimov]:
+    Well, no. But we''re all smart here! I''m sure we can come up with something!
+
+    [Hazel]:
+    Any ideas?
+
+    <t=159>[Hazard]: No.
+
+    [Asimov]: Also no.
+
+    <t=162>[Hazel]:
+    Great, we''re all gonna die.
+
+    <t=165>[Hazard]: Wait, actually I might have
+    an idea.
+
+    [Asimov]: What is it?
+
+    <t=170>[Hazard]: Well, about a decade
+    ago, when we were first starting to develop gravity manipulation tech, one of
+    the first things we used it to do was actually go to the moon.
+
+    It seemed
+    like the obvious choice, you know?
+
+    <t=182>[Asimov]: Yeah, I''ve seen the
+    old files for the moonbase, but it''s gonna crash into the planet soon. How does
+    that help us?
+
+    <t=187>[Hazard]: Well, once we got there, we actually got
+    a contract from NASA to help them with some of their operations. Namely, we built
+    a signal amplifier inside the moon.
+
+    <t=196>It uses the natural resonance
+    of the moon rock to produce a much stronger broadcast than anything we can make
+    on earth. They were using it to amplify the broadcasts they were sending out
+    to try to look for alien life.
+
+    <t=206>Of course, they stopped that project
+    once the 2013 Incident happened.
+
+    <t=210>[Hazel]: The 2013 incident?
+
+    <t=213>[Hazard]:
+    Oh don''t worry about that, just a little alien encounter. Didn''t end well,
+    but we had it covered.
+
+    <t=218>[Hazard]: Anyway, that amplifier isn''t being
+    used for anything anymore, but it''s still there at the center of the moon.
+
+    I
+    think, if we could connect the Gravipod''s gravitational manipulators to the
+    signal amplifier, then we could use its amplified field to redirect the moon.
+
+    <t=233>[Asimov]:
+    That actually sounds like it could work, but who would we send? None of us have
+    enough experience in the Gravipod to pull that off!
+
+    <t=241>[Hazel]: Well,
+    Alexis might, right? I mean, she''s gotten past every test we''ve given her.
+
+    <t=247>[Asimov]:
+    I hate to admit it, but you might be right. Alexis might be the only one who
+    can fix this.
+
+    <t=253>[Hazard]: Alexis, I''m sorry I have to ask you this,
+    but can we send you to the moon? You might be the only one that can prevent the
+    total destruction of life on Earth.
+
+    <t=262>[Asimov]: Hazard, she still has
+    no microphone.
+
+    <t=266>[Hazard]: Oh. Well, I''ll just have to take it on
+    faith that you''ll do it. Alright everyone, lets get her to the moon!
+
+    (pause)
+
+    <t=273>[Asimov]:
+    Alright Alexis, I''m gonna reroute you through the vents again. This time, we''re
+    gonna take you to the launch room.
+
+    <t=277>After the moonbase project was
+    discontinued, we converted this room to use for testing material collisions,
+    but we should still be able to get you to the moon. Just follow the vent until
+    you get to an opening.'

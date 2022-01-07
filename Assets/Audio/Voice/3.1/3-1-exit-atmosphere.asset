@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-1-exit-atmosphere
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c518010a572041b1d92a06d8c434c4c0, type: 3}
+  startTime: 357
+  endTime: 401.5
+  subtitles: '[Asimov]: She''s exited the atmosphere. Still on trajectory. She should
+    land perfectly in the moonbase''s landing zone.
+
+    <t=363>[Hazard]: What''s
+    her ETA?
+
+    <t=365>[Asimov]: About T-minus three hours, given hers and the
+    moon''s current trajectories. She''ll only have three hours to get to the signal
+    amplifier.
+
+    <t=372>[Hazel]: What do we do in the meantime?
+
+    <t=375>[Asimov]:
+    Well, Alexis should get some rest. She''ll need it for what lies ahead. As for
+    us, we''ve got three hours to kill. Any ideas?
+
+    <t=384>[Hazard]: Ooh! We
+    could play Scrabble!
+
+    [Hazel]: Oh, that sounds fun.
+
+    <t=388>[Asimov]:
+    Sure why not. I''ll go get the board from storage.
+
+    <t=391>[Hazard]: Nice!
+    I swear, this time I''ll finally find a way to use the word "quizzaciously"!
+
+    <t=397>[Hazel]:
+    Alexis, feel free to get some rest. We''ll wake you when it''s time for you to
+    land.'
