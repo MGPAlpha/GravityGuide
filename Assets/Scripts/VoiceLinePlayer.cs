@@ -37,6 +37,7 @@ public class VoiceLinePlayer : MonoBehaviour
                     GenerateSubtitles(clips[playIndex].subtitles);
                     SubtitleManager._sm.ShowSubtitle(subs[0].text);
                 } else {
+                    activePlayer = null;
                     playing = false;
                     SubtitleManager._sm.Hide();
                     if (onFinish.GetPersistentEventCount() > 0) onFinish.Invoke();
@@ -62,6 +63,7 @@ public class VoiceLinePlayer : MonoBehaviour
     }
 
     public void EndEarly() {
+        activePlayer = null;
         playing = false;
         SubtitleManager._sm.Hide();
         audioSource.Stop();

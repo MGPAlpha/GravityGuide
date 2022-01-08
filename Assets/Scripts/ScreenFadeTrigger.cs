@@ -25,7 +25,6 @@ public class ScreenFadeTrigger : MonoBehaviour
             if (effect.TargetReached()) {
                 if (onFadeEnd.GetPersistentEventCount() > 0) onFadeEnd.Invoke();
                 eventActive = false;
-                Debug.Log("Activated event");
             }
         }
     }
