@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class VoiceLinePlayer : MonoBehaviour
 {
+    private static VoiceLinePlayer activePlayer;
+    
     [SerializeField] private VoiceLine[] clips;
 
     [SerializeField] private UnityEvent onFinish;
@@ -45,17 +47,25 @@ public class VoiceLinePlayer : MonoBehaviour
                 SubtitleManager._sm.ShowSubtitle(subs[subtitleIndex].text);
             }
             if (Input.GetKeyDown(KeyCode.Backspace)) {
-                playing = false;
-                SubtitleManager._sm.Hide();
-                audioSource.Stop();
-                if (onFinish.GetPersistentEventCount() > 0) onFinish.Invoke();
+                EndEarly();
             }
         }
     }
 
     public void Play() {
+        if (activePlayer) {
+            activePlayer.EndEarly();
+        }
         playIndex = -1;
         playing = true;
+        activePlayer = this;
+    }
+
+    public void EndEarly() {
+        playing = false;
+        SubtitleManager._sm.Hide();
+        audioSource.Stop();
+        if (onFinish.GetPersistentEventCount() > 0) onFinish.Invoke();
     }
 
     private class Subtitle {
