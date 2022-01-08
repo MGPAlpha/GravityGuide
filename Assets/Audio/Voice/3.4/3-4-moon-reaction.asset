@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-4-moon-reaction
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2dcc42b225be78ac082cdd3fdeb3ec14, type: 3}
+  startTime: 86.3
+  endTime: 108
+  subtitles: '[Asimov]: Okay, okay. That was a little more forceful than we had anticipated.
+    It looks like the moon is now moving away from the Earth at a speed of... very
+    fast.
+
+    <t=97>[Hazel]: We still need to bring Alexis back!
+
+    <t=100>[Hazard]:
+    Alexis, we''re going to make a bit of an emergency escape here. I''m opening
+    a door at the top of the room. I need you to exit through there if you want to
+    make it back to Earth.'
