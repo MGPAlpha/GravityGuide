@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-3-disintegrate-prep
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2b81fc30766da7a19a1e2309de718b8f, type: 3}
+  startTime: 126.5
+  endTime: 143
+  subtitles: '[Asimov]: Now, you should see a sensor that looks like its connected
+    to the door to the passageway.
+
+    However, I''ve rerouted its signal so that,
+    when you activate the sensor, all of those crates should get disintegrated.
+
+    <t=137>[Hazard]:
+    This could be a bit dangerous, so be careful.
+
+    <t=139>[Asimov]: Okay. Whenever
+    you''re ready, activate the sensor.'
