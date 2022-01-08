@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-2-lock-3
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2e917e7c0b72434d1b64c92d5446ac4f, type: 3}
+  startTime: 107.5
+  endTime: 121
+  subtitles: '[Hazel]: I actually just learned about binary in one of my classes.
+    I think 21 translates to 10101? Alexis, try setting the switches to on-off-on-off-on
+    and see if that works.'

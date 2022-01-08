@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-2-moon-arrival
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2e917e7c0b72434d1b64c92d5446ac4f, type: 3}
+  startTime: 0.5
+  endTime: 26.3
+  subtitles: '[Hazel Marsh]: Alexis? Can you hear me? You''re almost to the moon,
+    so get ready for landing.
+
+    <t=6>[David Hazard]: You shouldn''t need to do
+    anything during landing, of course. You''re on track to fall directly into the
+    base.
+
+    <t=12>[Dr. Nicolette Asimov]: Alright it''s almost time. Everyone,
+    be ready. Alexis, you''re going to fall through a gravity field that reverses
+    your gravity back toward the Earth,
+
+    <t=20>but your momentum should keep
+    you going enough for you to get into the base and have a barrier close behind
+    you.
+
+
+    <t=24>[Asimov]: Alright, it''s time.'

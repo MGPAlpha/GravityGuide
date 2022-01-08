@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-2-lock-1
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2e917e7c0b72434d1b64c92d5446ac4f, type: 3}
+  startTime: 70
+  endTime: 92.5
+  subtitles: '[Asimov]: It looks like there''s some kind of lock set up on the door.
+    Haz, do you have any idea how she''s supposed to open the door?
+
+    <t=76>[Hazard]:
+    Oh, it''s been a while. I don''t remember what the code was at all. Let me check
+    some of the old blueprints...
+
+    <t=84>[Hazard]: There''s a note in the blueprints
+    that says "lock is 21", but the lock is a bunch of on/off switches, so I don''t
+    really see how that makes sense.
+
+'
