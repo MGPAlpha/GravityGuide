@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-2-shaft-instructions
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2e917e7c0b72434d1b64c92d5446ac4f, type: 3}
+  startTime: 144
+  endTime: 175
+  subtitles: '[Hazard]: Oh, that''s right. I forgot we sealed the core sector shaft
+    when we left the moonbase. Hmmm.
+
+    <t=154>[Hazard]: Oh! The field disruptor
+    should be in the next room over. We installed it as a safeguard in case we needed
+    to disrupt a disintegrator if it ever malfunctioned and became dangerous.
+
+    <t=164>If
+    you activate the field disruptor though, it should temporarily disable the light
+    barrier, long enough to let you get through.
+
+    <t=170>You''ll have to get
+    back to the room quickly though, before the barrier reasserts itself.'

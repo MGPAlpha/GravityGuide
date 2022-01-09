@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-4-escape-1
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2dcc42b225be78ac082cdd3fdeb3ec14, type: 3}
+  startTime: 108
+  endTime: 126
+  subtitles: '[Hazard]: Okay, you''re on the path to one of the emergency escape
+    routes. If you just keep pressing forward, you should be able to reach an exit.
+
+    <t=115>[Asimov]:
+    Haz, it looks like the moon is on track to escape Earth''s orbit, and soon after
+    that escape our communication range. If she doesn''t get out of there soon, we''ll
+    lose our connection and she won''t be able to get back.
+
+    <t=124>[Hazard]:
+    Then she''d better be quick.'

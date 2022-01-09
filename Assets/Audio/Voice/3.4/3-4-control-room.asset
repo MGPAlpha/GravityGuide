@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-4-control-room
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2dcc42b225be78ac082cdd3fdeb3ec14, type: 3}
+  startTime: 7.8
+  endTime: 30
+  subtitles: '[Hazard]: Alexis, welcome to the control room. Above you is the primary
+    signal input array. That''s what we''ll use to send the signal from your gravity
+    field to the amplifier.
+
+    <t=17>[Hazard]: Before we can connect to the amplifier,
+    we need to activate it. You should see three crate sensors in the room. Put a
+    crate into each of them to turn the amplifier on.
+
+    <t=26>[Dr. Nicolette Asimov]:
+    There should be a few rooms branching out from the control room where you can
+    get some crates.'

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-1-trajectory
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: c518010a572041b1d92a06d8c434c4c0, type: 3}
+  startTime: 351
+  endTime: 356
+  subtitles: '[Asimov]: Okay, trajectory looks good so far. She should clear the
+    atmosphere soon. Hang in there, Alexis.'

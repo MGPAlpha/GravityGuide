@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3bd4818bfc771cb954d11e102104ff, type: 3}
+  m_Name: 3-4-exit-3
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 2dcc42b225be78ac082cdd3fdeb3ec14, type: 3}
+  startTime: 149.5
+  endTime: 310.628
+  subtitles: '[Hazard]: I''ve got something! The data''s coming in. According to
+    the calculations.... she''s on a path toward the Earth!
+
+    <t=156>It''s not
+    an exact path of course, but once she''s more in range we can adjust her trajectory
+    more precisely to make her land squarely inside Gravitonix''s landing bay. She''s
+    gonna make it home.
+
+    <t=166>[Hazel]: Oh thank gosh I was terrified!
+
+    [Asimov]:
+    That''s good to hear.
+
+    <t=171>[Hazard]: How about you, Alexis? How do you
+    feel after saving the Earth itself from destruction?
+
+    <t=175>...
+
+    <t=177>[Asimov]:
+    Haz. Still no microphone. She can''t answer.
+
+    <t=180>[Hazard]: Oh, that''s
+    right. Well she can tell us all about it once she''s back on the ground and out
+    of that pod.
+
+    <t=186>[Hazard]: Alexis, it''s gonna be a few hours before
+    you''re back on the ground. But just hang in there, and we''ll have you home
+    in no time.
+
+    <t=194>[Hazel]: So I guess we have some time to kill again,
+    huh?
+
+    [Asimov]: It seems like we do.
+
+    <t=199>[Hazard]: You know what?
+    Why don''t we see what''s on the radio? I wonder if anyone has noticed that the
+    moon is gone.
+
+    <t=204>(radio static)
+
+    <t=210>[Radio Announcer]: ...And
+    for those of you just tuning in, boy has it been one heck of a news day. In case
+    you missed it, earlier today we started getting reports that people all across
+    the country, and in fact the world, were seeing the moon grow much larger in
+    the sky.
+
+    <t=220>In fact, it eventually got so big as to completely block
+    out the sky in some places.
+
+    <t=225>Many viewed this as a sign of impending
+    doom, as it seemed that the moon would crash into the Earth, immolating us all
+    in an instant. I myself truly believed this to be the end of it all.
+
+    <t=233>[Radio]:
+    I am pleased to report, however, that this cosmic disaster appears to have been
+    averted.
+
+    <t=238>Just when we though it was all over, the moon began to shrink
+    in the sky, even faster than it appeared, until eventually completely disappearing.
+
+    <t=245>[Radio]:
+    We''ve reached out to the scientists at NASA for comment, but it seems they''re
+    just as baffled as anyone. According to them, the moon''s orbit experienced some
+    sudden degeneration, pulling it onto a collision course with the Earth.
+
+    <t=255>Apparently
+    though, before it could make contact, some unseen force suddenly propelled it
+    away from the Earth and completely out of Earth''s gravitational influence.
+
+    <t=263>They
+    say it''s on track to pass by Saturn in the next 17 hours, and to completely
+    exit the solar system within the week. They could offer no explanation for why
+    this would happen.
+
+    <t=271>[Radio]: It does seem pretty clear to me, though,
+    how this happened. The only reasonable explanation for something like this is
+    a supernatural one.
+
+    <t=278>Clearly, humanity has angered the sky god, who
+    has taken our beloved moon from us as punishment. The only way we might have
+    the moon returned is through a debt of service to the sky god.
+
+    <t=287>That
+    is why, effective immediately, I am resigning my position as newscaster in order
+    to fully devote my life in service to the god of the sky.
+
+    <t=294>I encourage
+    all of you listening to join me in my devotion.
+
+    <t=297>For the last time
+    on air, this is Ray Diovois, signing off.
+
+    <t=301>(radio static)
+
+    <t=308>[Hazard]:
+    Ummm...
+
+    <t=310>[Hazard]: Well fu@#'
