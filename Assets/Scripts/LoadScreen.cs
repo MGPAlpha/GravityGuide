@@ -50,7 +50,7 @@ public class LoadScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fill = Mathf.MoveTowards(fill, fillTarget, fillSpeed * Time.deltaTime);
+        fill = Mathf.MoveTowards(fill, fillTarget, fillSpeed * Time.unscaledDeltaTime);
         _im.materialForRendering.SetFloat("_Fill", fill);
         if (triggerAdvance && fill == fillTarget) {
             triggerAdvance.LoadNextLevelAsync();
