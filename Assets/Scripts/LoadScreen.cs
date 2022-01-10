@@ -22,6 +22,7 @@ public class LoadScreen : MonoBehaviour
     private static string currentTip = null;
 
     private AdvanceLevel triggerAdvance = null;
+    private bool triggerMenu = false;
 
     private float fill;
     private float fillTarget;
@@ -56,11 +57,21 @@ public class LoadScreen : MonoBehaviour
             triggerAdvance.LoadNextLevelAsync();
             triggerAdvance = null;
         }
+        if (triggerMenu && fill == fillTarget) {
+            MenuManager._mm.ReadyToLoad();
+            triggerMenu = false;
+        }
     }
 
     public void FillAndTriggerLevel(AdvanceLevel al) {
         fillTarget = 1;
         triggerAdvance = al;
+        NewTip();
+    }
+
+    public void FillAndTriggerMenu() {
+        fillTarget = 1;
+        triggerMenu = true;
         NewTip();
     }
 }

@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
     }
 
     public LoadScreen loadScreen;
+
+    private string waitLoadName = null;
+    private int waitLoadIndex = 0;
     
     private void Awake()
     {
@@ -27,6 +30,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button continueButton;
 
     [SerializeField] private bool pauseStopsTime = true;
+
+    public void ReadyToLoad() {
+        if (waitLoadName != null) {
+            SceneManager.LoadSceneAsync(waitLoadName);
+        } else {
+            SceneManager.LoadSceneAsync(waitLoadIndex);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -57,15 +68,24 @@ public class MenuManager : MonoBehaviour
     public void Play() {
 
         //Put this in whenever you want to load a scene
-        SceneManager.LoadScene(1);
         PlayerPrefs.SetInt("levelProgress", 1);
         Time.timeScale = 1;
+        if (!loadScreen) SceneManager.LoadScene(1);
+        else {
+            waitLoadIndex = 1;
+            loadScreen.FillAndTriggerMenu();
+        }
     }
 
     public void Continue() {
         if (PlayerPrefs.GetInt("levelProgress") > 0) {
             Time.timeScale = 1;
-            SceneManager.LoadScene(PlayerPrefs.GetInt("levelProgress"));
+            int loadIndex = PlayerPrefs.GetInt("levelProgress");
+            if (!loadScreen) SceneManager.LoadScene(loadIndex);
+            else {
+                waitLoadIndex = loadIndex;
+                loadScreen.FillAndTriggerMenu();
+            }
         }
     }
 
@@ -75,12 +95,21 @@ public class MenuManager : MonoBehaviour
 
     public void Menu() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Title");
+        if (!loadScreen) SceneManager.LoadScene("Title");
+        else {
+            waitLoadName = "Title";
+            loadScreen.FillAndTriggerMenu();
+        }
     }
 
     public void Reset() {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int loadIndex = SceneManager.GetActiveScene().buildIndex;
+        if (!loadScreen) SceneManager.LoadScene(loadIndex);
+        else {
+            waitLoadIndex = loadIndex;
+            loadScreen.FillAndTriggerMenu();
+        }
     }
 
     public void ContinueFromSave() {
@@ -90,7 +119,11 @@ public class MenuManager : MonoBehaviour
 
     public void Credits() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Credits");
+        if (!loadScreen) SceneManager.LoadScene("Credits");
+        else {
+            waitLoadName = "Credits";
+            loadScreen.FillAndTriggerMenu();
+        }
     }
 
     public bool paused {
