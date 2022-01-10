@@ -70265,9 +70265,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 547246898}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 608059436}
+        m_TargetAssemblyTypeName: LoadScreen, Assembly-CSharp
+        m_MethodName: FillAndQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
