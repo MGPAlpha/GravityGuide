@@ -99,6 +99,7 @@ public class MenuManager : MonoBehaviour
         else {
             waitLoadName = "Title";
             loadScreen.FillAndTriggerMenu();
+            if (pauseMenu) pauseMenu.SetActive(false);
         }
     }
 
@@ -109,6 +110,7 @@ public class MenuManager : MonoBehaviour
         else {
             waitLoadIndex = loadIndex;
             loadScreen.FillAndTriggerMenu();
+            if (pauseMenu) pauseMenu.SetActive(false);
         }
     }
 
