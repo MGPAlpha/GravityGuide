@@ -23,6 +23,7 @@ public class LoadScreen : MonoBehaviour
 
     private AdvanceLevel triggerAdvance = null;
     private bool triggerMenu = false;
+    private bool triggerQuit = false;
 
     private float fill;
     private float fillTarget;
@@ -55,6 +56,9 @@ public class LoadScreen : MonoBehaviour
         _im.materialForRendering.SetFloat("_Fill", fill);
         _im.raycastTarget = fill != 0;
         AudioListener.volume = Mathf.Lerp(0, OptionsMenu.masterVolume, 1 - fill);
+        if (triggerQuit  && fill == fillTarget) {
+            Application.Quit();
+        }
         if (triggerAdvance && fill == fillTarget) {
             triggerAdvance.LoadNextLevelAsync();
             triggerAdvance = null;
@@ -74,6 +78,12 @@ public class LoadScreen : MonoBehaviour
     public void FillAndTriggerMenu() {
         fillTarget = 1;
         triggerMenu = true;
+        NewTip();
+    }
+
+    public void FillAndQuit() {
+        fillTarget = 1;
+        triggerQuit = true;
         NewTip();
     }
 }

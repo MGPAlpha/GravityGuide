@@ -89,4 +89,10 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("_Speedrun", sp ? 1 : 0);
         dialogSkipHint.enabled = speedrunClock;
     }
+
+    public void ResetSave() {
+        PlayerPrefs.SetFloat("levelProgress", 0);
+        PlayerPrefs.SetFloat("maxLevelProgress", 0);
+        MenuManager._mm.Menu();
+    }
 }
