@@ -20,7 +20,13 @@ public class AdvanceLevel : MonoBehaviour
     }
 
     public void LoadNextLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (MenuManager._mm.loadScreen) {
+            MenuManager._mm.loadScreen.FillAndTriggerLevel(this);
+        } else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadNextLevelAsync() {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
