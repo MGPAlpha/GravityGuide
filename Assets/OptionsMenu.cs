@@ -10,7 +10,13 @@ public class OptionsMenu : MonoBehaviour
         private set;
     } = 1;
 
+    public static bool subtitles {
+        get;
+        private set;
+    } = true;
+
     [SerializeField] private Slider volumeSlider;
+    [SerializeField] private Toggle subtitlesToggle;
 
     private static bool optionsReady = false;
     
@@ -25,10 +31,19 @@ public class OptionsMenu : MonoBehaviour
                 masterVolume = 1;
             }
             AudioListener.volume = masterVolume;
+            
+            if (PlayerPrefs.HasKey("_Subtitles")) {
+                subtitles = PlayerPrefs.GetFloat("_Subtitles") == 1;
+            } else {
+                PlayerPrefs.SetFloat("_Subtitles", 1);
+                subtitles = true;
+            }
+
             optionsReady = true;
         }
         
         volumeSlider.value = masterVolume;
+        subtitlesToggle.isOn = subtitles;
 
         gameObject.SetActive(false);
     }
@@ -43,5 +58,13 @@ public class OptionsMenu : MonoBehaviour
         masterVolume = vol;
         PlayerPrefs.SetFloat("_MasterVolume", masterVolume);
         AudioListener.volume = masterVolume;
+    }
+
+    public void UpdateSubtitles(bool sub) {
+        subtitles = sub;
+        PlayerPrefs.SetFloat("_Subtitles", sub ? 1 : 0);
+        if (!subtitles && SubtitleManager._sm) {
+            SubtitleManager._sm.gameObject.SetActive(false);
+        }
     }
 }
