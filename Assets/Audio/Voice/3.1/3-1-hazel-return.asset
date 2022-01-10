@@ -31,7 +31,7 @@ MonoBehaviour:
 
     [Asimov]: Oh god.
 
-    <t=134[Asimov]: Okay, Alexis? Hey, so you might
+    <t=134>[Asimov]: Okay, Alexis? Hey, so you might
     have heard over the intercom that the moon might be on a bit of a collision course
     with the Earth.
 
@@ -115,8 +115,6 @@ MonoBehaviour:
 
     <t=266>[Hazard]: Oh. Well, I''ll just have to take it on
     faith that you''ll do it. Alright everyone, lets get her to the moon!
-
-    (pause)
 
     <t=273>[Asimov]:
     Alright Alexis, I''m gonna reroute you through the vents again. This time, we''re
