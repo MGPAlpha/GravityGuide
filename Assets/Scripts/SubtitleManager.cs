@@ -39,6 +39,7 @@ public class SubtitleManager : MonoBehaviour
     }
 
     public void ShowSubtitle(string sub) {
+        if (!OptionsMenu.subtitles) return;
         gameObject.SetActive(true);
         subtitleText.text = sub;
     }

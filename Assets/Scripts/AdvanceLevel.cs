@@ -20,6 +20,9 @@ public class AdvanceLevel : MonoBehaviour
     }
 
     public void LoadNextLevel() {
+        if (SpeedrunTimer._st) {
+            SpeedrunTimer._st.ActivateTimer(false);
+        }
         if (MenuManager._mm.loadScreen) {
             MenuManager._mm.loadScreen.FillAndTriggerLevel(this);
         } else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

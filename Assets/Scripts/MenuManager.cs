@@ -68,6 +68,7 @@ public class MenuManager : MonoBehaviour
     public void Play() {
 
         //Put this in whenever you want to load a scene
+        SpeedrunTimer.ResetSpeedrunTimer();
         PlayerPrefs.SetInt("levelProgress", 1);
         Time.timeScale = 1;
         if (!loadScreen) SceneManager.LoadScene(1);
@@ -95,6 +96,9 @@ public class MenuManager : MonoBehaviour
 
     public void Menu() {
         Time.timeScale = 1;
+        if (SpeedrunTimer._st) {
+            SpeedrunTimer._st.ActivateTimer(false);
+        }
         if (!loadScreen) SceneManager.LoadScene("Title");
         else {
             waitLoadName = "Title";
@@ -105,6 +109,9 @@ public class MenuManager : MonoBehaviour
 
     public void Reset() {
         Time.timeScale = 1;
+        if (SpeedrunTimer._st) {
+            SpeedrunTimer._st.ActivateTimer(false);
+        }
         int loadIndex = SceneManager.GetActiveScene().buildIndex;
         if (!loadScreen) SceneManager.LoadScene(loadIndex);
         else {

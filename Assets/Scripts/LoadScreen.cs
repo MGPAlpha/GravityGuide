@@ -54,7 +54,7 @@ public class LoadScreen : MonoBehaviour
         fill = Mathf.MoveTowards(fill, fillTarget, fillSpeed * Time.unscaledDeltaTime);
         _im.materialForRendering.SetFloat("_Fill", fill);
         _im.raycastTarget = fill != 0;
-        AudioListener.volume = 1 - fill;
+        AudioListener.volume = Mathf.Lerp(0, OptionsMenu.masterVolume, 1 - fill);
         if (triggerAdvance && fill == fillTarget) {
             triggerAdvance.LoadNextLevelAsync();
             triggerAdvance = null;
