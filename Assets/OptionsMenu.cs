@@ -23,6 +23,7 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Toggle subtitlesToggle;
     [SerializeField] private Toggle speedrunToggle;
+    [SerializeField] private TMPro.TextMeshProUGUI dialogSkipHint;
 
     private static bool optionsReady = false;
     
@@ -58,6 +59,7 @@ public class OptionsMenu : MonoBehaviour
         volumeSlider.value = masterVolume;
         subtitlesToggle.isOn = subtitles;
         speedrunToggle.isOn = speedrunClock;
+        dialogSkipHint.enabled = speedrunClock;
 
         gameObject.SetActive(false);
     }
@@ -85,5 +87,6 @@ public class OptionsMenu : MonoBehaviour
     public void UpdateSpeedrun(bool sp) {
         speedrunClock = sp;
         PlayerPrefs.SetFloat("_Speedrun", sp ? 1 : 0);
+        dialogSkipHint.enabled = speedrunClock;
     }
 }
