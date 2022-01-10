@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
         get;
         private set;
     }
+
+    public LoadScreen loadScreen;
     
     private void Awake()
     {
