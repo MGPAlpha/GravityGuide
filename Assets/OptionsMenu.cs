@@ -15,8 +15,14 @@ public class OptionsMenu : MonoBehaviour
         private set;
     } = true;
 
+    public static bool speedrunClock {
+        get;
+        private set;
+    } = false;
+
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Toggle subtitlesToggle;
+    [SerializeField] private Toggle speedrunToggle;
 
     private static bool optionsReady = false;
     
@@ -39,11 +45,19 @@ public class OptionsMenu : MonoBehaviour
                 subtitles = true;
             }
 
+            if (PlayerPrefs.HasKey("_Speedrun")) {
+                speedrunClock = PlayerPrefs.GetFloat("_Speedrun") == 1;
+            } else {
+                PlayerPrefs.SetFloat("_Speedrun", 0);
+                speedrunClock = false;
+            }
+
             optionsReady = true;
         }
         
         volumeSlider.value = masterVolume;
         subtitlesToggle.isOn = subtitles;
+        speedrunToggle.isOn = speedrunClock;
 
         gameObject.SetActive(false);
     }
@@ -66,5 +80,10 @@ public class OptionsMenu : MonoBehaviour
         if (!subtitles && SubtitleManager._sm) {
             SubtitleManager._sm.gameObject.SetActive(false);
         }
+    }
+
+    public void UpdateSpeedrun(bool sp) {
+        speedrunClock = sp;
+        PlayerPrefs.SetFloat("_Speedrun", sp ? 1 : 0);
     }
 }
