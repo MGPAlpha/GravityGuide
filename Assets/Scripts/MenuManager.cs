@@ -151,6 +151,9 @@ public class MenuManager : MonoBehaviour
             paused = true;
             if (pauseMenu) pauseMenu.SetActive(true);
         } else {
+            foreach (OptionsMenu om in GetComponentsInChildren<OptionsMenu>()) {
+                om.gameObject.SetActive(false);
+            }
             if (pauseStopsTime) Time.timeScale = 1;
             paused = false;
             if (pauseMenu) pauseMenu.SetActive(false);

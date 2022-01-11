@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         transform.position = playerTransform.position - (playerTransform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition)) / (cameraStiffness + 2);
         transform.position = Vector3.ProjectOnPlane(transform.position, Vector3.back);
