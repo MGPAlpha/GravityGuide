@@ -50,5 +50,6 @@ public class DissolveDestroy : MonoBehaviour
         if (_as && dissolveEffect) {
             _as.PlayOneShot(dissolveEffect);
         }
+        if (_re) _re.material.SetVector("_NoiseOffset", new Vector4(Random.Range(0,100),Random.Range(0,100),0,0));
     }
 }
