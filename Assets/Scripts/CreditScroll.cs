@@ -20,8 +20,8 @@ public class CreditScroll : MonoBehaviour
     void Update()
     {
         if (!finishedScroll) {
-            transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
-            menuReturnButton.transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
+            transform.position += Vector3.up * scrollSpeed * Time.unscaledDeltaTime;
+            menuReturnButton.transform.position += Vector3.up * scrollSpeed * Time.unscaledDeltaTime;
         }
         if (menuReturnButton) {
             RectTransform menuButtonTransform = menuReturnButton.GetComponent<RectTransform>();
