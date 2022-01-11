@@ -91,8 +91,8 @@ public class OptionsMenu : MonoBehaviour
     }
 
     public void ResetSave() {
-        PlayerPrefs.SetFloat("levelProgress", 0);
-        PlayerPrefs.SetFloat("maxLevelProgress", 0);
+        PlayerPrefs.SetInt("levelProgress", 0);
+        PlayerPrefs.SetInt("maxLevelProgress", 0);
         MenuManager._mm.Menu();
     }
 }
