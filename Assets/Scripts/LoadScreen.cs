@@ -16,7 +16,8 @@ public class LoadScreen : MonoBehaviour
         "Hold shift while aiming your Gravity Manipulators to aim at precise angles.",
         "If you ever get stuck during a level, you can restart it from the pause menu.",
         "Crate Dispensers can only dispense one crate at a time. If you request a new crate, the old one will automatically disintegrate.",
-        "Gravity Fields don't cancel you momentum, so if you build up enough speed you can pass through them, against the flow."
+        "Gravity Fields don't cancel your momentum, so if you build up enough speed you can pass through them, against the flow.",
+        "While inside a Gravity Field, you cannot alter your own gravity."
     }; 
 
     private static string currentTip = null;
