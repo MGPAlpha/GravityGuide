@@ -50,6 +50,11 @@ public class VoiceLinePlayer : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Backspace)) {
                 EndEarly();
             }
+            if (MenuManager._mm.paused && audioSource.isPlaying) {
+                audioSource.Pause();
+            } else if (!MenuManager._mm.paused && !audioSource.isPlaying) {
+                audioSource.UnPause();
+            }
         }
     }
 
