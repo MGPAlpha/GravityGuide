@@ -56,6 +56,8 @@ public class MenuManager : MonoBehaviour
         if (continueButton && PlayerPrefs.GetInt("levelProgress") < 1) {
             continueButton.interactable = false;
         }
+        audioMixer.ClearFloat("MusicVolume");
+        audioMixer.ClearFloat("MusicLowPass");
     }
 
     // Update is called once per frame
