@@ -625,6 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f58ccc1a8e186aab6b0ee4faa3c6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerActive: 1
 --- !u!1 &7586817561259450492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 1189096658}
+  audioMixer: {fileID: 24100000, guid: 22cdc9fedc2c04f708c422c3a81003ce, type: 2}
   countLevelAsSave: 1
   continueButton: {fileID: 0}
   pauseStopsTime: 1

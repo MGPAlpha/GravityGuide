@@ -3736,6 +3736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 608059436}
+  audioMixer: {fileID: 0}
   countLevelAsSave: 0
   continueButton: {fileID: 789039583}
   pauseStopsTime: 1
@@ -65692,7 +65693,8 @@ AudioSource:
   m_GameObject: {fileID: 1213551553}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 22cdc9fedc2c04f708c422c3a81003ce,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: ea3c3d35a7991fd00821a8176cc232d7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.35

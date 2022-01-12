@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class MenuManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+    [SerializeField] private AudioMixer audioMixer;
 
     [SerializeField] private bool countLevelAsSave = true;
     
@@ -150,6 +153,8 @@ public class MenuManager : MonoBehaviour
             if (pauseStopsTime) Time.timeScale = 0;
             paused = true;
             if (pauseMenu) pauseMenu.SetActive(true);
+            audioMixer.SetFloat("MusicVolume", -3f);
+            audioMixer.SetFloat("MusicLowPass", 500f);
         } else {
             foreach (OptionsMenu om in GetComponentsInChildren<OptionsMenu>()) {
                 om.gameObject.SetActive(false);
@@ -157,6 +162,8 @@ public class MenuManager : MonoBehaviour
             if (pauseStopsTime) Time.timeScale = 1;
             paused = false;
             if (pauseMenu) pauseMenu.SetActive(false);
+            audioMixer.ClearFloat("MusicVolume");
+            audioMixer.ClearFloat("MusicLowPass");
         }
     }
 
