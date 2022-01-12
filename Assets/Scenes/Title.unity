@@ -3736,7 +3736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScreen: {fileID: 608059436}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 22cdc9fedc2c04f708c422c3a81003ce, type: 2}
   countLevelAsSave: 0
   continueButton: {fileID: 789039583}
   pauseStopsTime: 1
