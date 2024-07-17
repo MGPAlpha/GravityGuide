@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7156f48d59d9945947a44b0548d895, type: 3}
   m_Name: Underground Sibling Tile (Override)
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 4099902767569298868, guid: 80573f5d22315d0e7be7a63b36bee2df,
+  m_DefaultSprite: {fileID: -4609512084263830291, guid: 2c149b7d718fe562ea77f4c1eab1eb8f,
     type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Sprites: []
   m_GameObjects: []
   m_InstanceTile: {fileID: -2315903236852385847}
-  m_DefaultSprite: {fileID: 4099902767569298868, guid: 80573f5d22315d0e7be7a63b36bee2df,
+  m_DefaultSprite: {fileID: -4609512084263830291, guid: 2c149b7d718fe562ea77f4c1eab1eb8f,
     type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
