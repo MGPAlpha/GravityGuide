@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName="Any Neighbor Rule Tile", menuName="2D/Tiles/Any Neighbor Rule Tile")]
+[CreateAssetMenu(fileName="New Any Neighbor Rule Tile", menuName="2D/Tiles/Any Neighbor Rule Tile")]
 public class AnyNeighborRuleTile : RuleTile<AnyNeighborRuleTile.Neighbor> {
 	public class Neighbor : RuleTile.TilingRule.Neighbor {
 		public const int NotNull = 3;
