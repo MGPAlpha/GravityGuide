@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Moon Tiles_4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -410630186142627376, guid: c9b42d3909f5c0941a9deba4ce025585,
+  m_Sprite: {fileID: -5814622792153557727, guid: c9b42d3909f5c0941a9deba4ce025585,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
