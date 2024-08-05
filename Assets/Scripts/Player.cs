@@ -37,6 +37,7 @@ public class Player : GravityObject
     private Vector2 newForce;
     private Vector2 capsuleColliderSize;
 
+    private Vector2 slopeNormal;
     private Vector2 slopeNormalPerp;
 
     // private Rigidbody2D rb;
@@ -244,6 +245,10 @@ public class Player : GravityObject
             isJumping = false;
         }
 
+        if (!isGrounded) {
+            canJump = false;
+        }
+
         if(isGrounded && !isJumping && slopeDownAngle <= maxSlopeAngle)
         {
             canJump = true;
@@ -306,7 +311,8 @@ public class Player : GravityObject
         if (hit)
         {
 
-            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;            
+            slopeNormal = hit.normal.normalized;
+            slopeNormalPerp = Vector2.Perpendicular(slopeNormal).normalized;            
 
             slopeDownAngle = Vector2.Angle(hit.normal, -personalGravity.normalized);
 
@@ -357,28 +363,16 @@ public class Player : GravityObject
 
     private void ApplyMovement()
     {
-        // rb.velocity += gravity * Time.fixedDeltaTime;
         
-        /*if (isGrounded && !isOnSlope && !isJumping) //if not on slope
-        {
-            Debug.Log("This one");
-            // newVelocity.Set(movementSpeed * xInput, 0.0f);
-            newVelocity = movementSpeed * xInput * Vector2.Perpendicular(gravity.normalized);
-            rb.velocity = newVelocity;
-        }
-        else*/ if (isGrounded && /*isOnSlope &&*/ canWalkOnSlope && !isJumping) //If on slope
+        if (isGrounded && /*isOnSlope &&*/ canWalkOnSlope && !isJumping) //If on slope
         {
             // newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
-            newVelocity = slopeNormalPerp * -xInput * movementSpeed;
+            Debug.Log("Slope normal component " + slopeNormal * Vector2.Dot(slopeNormal, rb.velocity));
+            newVelocity = slopeNormalPerp * -xInput * movementSpeed + slopeNormal * (Mathf.Min(Vector2.Dot(slopeNormal, rb.velocity), 0) + -personalGravity.magnitude * Time.fixedDeltaTime);
             rb.velocity = newVelocity;
+
         }
-        else /*if (isGrounded && !canWalkOnSlope && !isJumping) {
-            newVelocity = Vector2.Dot(rb.velocity, gravity.normalized) * gravity.normalized;
-            rb.velocity = newVelocity;
-            rb.velocity += gravity * Time.fixedDeltaTime;
-            Debug.Log("Slope slide");
-        }
-        else*/ if (/*!isGrounded*/ true) //If in air
+        else //If in air
         {
             float wallAdjustedXInput = xInput;
             
@@ -408,8 +402,8 @@ public class Player : GravityObject
             rb.velocity = newVelocity;
 
             // rb.velocity += movementSpeed * wallAdjustedXInput * Vector2.Perpendicular(personalGravity.normalized) * Time.fixedDeltaTime * 10;
-
             rb.velocity += personalGravity * Time.fixedDeltaTime;
+            
         }
 
     }
