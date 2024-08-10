@@ -8,6 +8,7 @@ public class Player : GravityObject
     [SerializeField] private float movementSpeed;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private float jumpForce;
+    [SerializeField] private float maxLateralSpeedForGrounding = 10;
     [SerializeField] private float slopeCheckDistance;
     [SerializeField] private float maxSlopeAngle;
     [SerializeField] private float wallAngle;
@@ -238,7 +239,19 @@ public class Player : GravityObject
 
     private void CheckGround()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        bool canBeGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        if (canBeGrounded) {
+            float lateralSpeed = Mathf.Abs(Vector2.Dot(rb.velocity, Vector2.Perpendicular(personalGravity.normalized)));
+            Debug.Log("Lateral speed: " + lateralSpeed);
+            if (lateralSpeed < maxLateralSpeedForGrounding) {
+                isGrounded = true;
+            } else {
+                isGrounded = false;
+            }
+        } else {
+            isGrounded = false;
+        }
+        
 
         if(Vector2.Dot(rb.velocity, -personalGravity.normalized) <= 0.0f)
         {
@@ -367,7 +380,7 @@ public class Player : GravityObject
         if (isGrounded && /*isOnSlope &&*/ canWalkOnSlope && !isJumping) //If on slope
         {
             // newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
-            Debug.Log("Slope normal component " + slopeNormal * Vector2.Dot(slopeNormal, rb.velocity));
+            // Debug.Log("Slope normal component " + slopeNormal * Vector2.Dot(slopeNormal, rb.velocity));
             newVelocity = slopeNormalPerp * -xInput * movementSpeed + slopeNormal * (Mathf.Min(Vector2.Dot(slopeNormal, rb.velocity), 0) + -personalGravity.magnitude * Time.fixedDeltaTime);
             rb.velocity = newVelocity;
 

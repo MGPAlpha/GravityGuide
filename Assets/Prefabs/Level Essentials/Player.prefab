@@ -109,6 +109,7 @@ MonoBehaviour:
   movementSpeed: 10
   groundCheckRadius: 0.4
   jumpForce: 10
+  maxLateralSpeedForGrounding: 15
   slopeCheckDistance: 0.55
   maxSlopeAngle: 60
   wallAngle: 60
