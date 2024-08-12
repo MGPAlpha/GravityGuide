@@ -13,6 +13,8 @@ public class PlayerDebugController : MonoBehaviour
     [SerializeField] private float freeMovementSpeed = 15;
     [SerializeField] private float hiSpeedMultiplier = 3;
 
+    [SerializeField] private GameObject cratePrefab;
+
     private bool debugMode = false;
     private bool paused = false;
     private bool freeMovement = false;
@@ -37,6 +39,9 @@ public class PlayerDebugController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.M)) {
                 ToggleFreeMovement();
+            }
+            if (Input.GetKeyDown(KeyCode.C)) {
+                SpawnCrate();
             }
         }
         if (freeMovement) {
@@ -83,5 +88,9 @@ public class PlayerDebugController : MonoBehaviour
             _collider.enabled = true;
             _player.enabled = true;
         }
+    }
+    void SpawnCrate() {
+        Vector2 spawnPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(cratePrefab, spawnPos, Quaternion.identity);
     }
 }
