@@ -43,24 +43,27 @@ public class PlayerDebugController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C)) {
                 SpawnCrate();
             }
+            if (Input.GetKeyDown(KeyCode.O)) {
+                OpenBarrier();
+            }
         }
         if (freeMovement) {
-            Vector2 movementDirection = Vector2.zero;
+            Vector3 movementDirection = Vector3.zero;
             if (Input.GetKey(KeyCode.W)) {
-                movementDirection += Vector2.up;
+                movementDirection += Vector3.up;
             }
             if (Input.GetKey(KeyCode.A)) {
-                movementDirection += Vector2.left;
+                movementDirection += Vector3.left;
             }
             if (Input.GetKey(KeyCode.S)) {
-                movementDirection += Vector2.down;
+                movementDirection += Vector3.down;
             }
             if (Input.GetKey(KeyCode.D)) {
-                movementDirection += Vector2.right;
+                movementDirection += Vector3.right;
             }
             bool hiSpeed = Input.GetKey(KeyCode.LeftShift);
             float speedMul = hiSpeed ? hiSpeedMultiplier : 1;
-            _rb.MovePosition(_rb.position + movementDirection * freeMovementSpeed * speedMul * Time.unscaledDeltaTime);
+            transform.position += movementDirection * freeMovementSpeed * speedMul * Time.unscaledDeltaTime;
             Debug.Log("name " + transform.gameObject.name);
             Debug.Log("dir " + movementDirection);
         }
@@ -92,5 +95,18 @@ public class PlayerDebugController : MonoBehaviour
     void SpawnCrate() {
         Vector2 spawnPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Instantiate(cratePrefab, spawnPos, Quaternion.identity);
+    }
+
+    void OpenBarrier() {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] colliders = Physics2D.OverlapPointAll(mousePos);
+        foreach (Collider2D col in colliders) {
+            if (col.TryGetComponent<Door>(out Door d)) {
+                d.Open();
+            }
+            if (col.TryGetComponent<LightBarrier>(out LightBarrier b)) {
+                b.TurnOff();
+            }
+        }
     }
 }
