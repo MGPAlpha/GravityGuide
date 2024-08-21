@@ -14,11 +14,14 @@ public class PlayerDebugController : MonoBehaviour
     [SerializeField] private float hiSpeedMultiplier = 3;
 
     [SerializeField] private GameObject cratePrefab;
+    [SerializeField] private GameObject gravityPrefab;
+    [SerializeField] private Color gravityColor;
 
     private bool debugMode = false;
     private bool paused = false;
     private bool freeMovement = false;
-    
+    private Aura spawnedGravity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,13 @@ public class PlayerDebugController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O)) {
                 OpenBarrier();
             }
+            if (Input.GetKeyDown(KeyCode.G)) {
+                SpawnGravity();
+            }
+            if (spawnedGravity && Input.GetKeyUp(KeyCode.G)) {
+                Debug.Log("Activating new grav");
+                ActivateSpawnedGravity();
+            }
         }
         if (freeMovement) {
             Vector3 movementDirection = Vector3.zero;
@@ -66,6 +76,9 @@ public class PlayerDebugController : MonoBehaviour
             transform.position += movementDirection * freeMovementSpeed * speedMul * Time.unscaledDeltaTime;
             Debug.Log("name " + transform.gameObject.name);
             Debug.Log("dir " + movementDirection);
+        }
+        if (spawnedGravity) {
+            AimGravity();
         }
     }
 
@@ -108,5 +121,37 @@ public class PlayerDebugController : MonoBehaviour
                 b.TurnOff();
             }
         }
+    }
+
+    void SpawnGravity() {
+        Vector2 spawnPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        GameObject spawn = Instantiate(gravityPrefab, spawnPos, Quaternion.identity);
+        spawnedGravity = spawn.GetComponent<Aura>();
+        spawnedGravity.SetColor(gravityColor);
+        AimGravity();
+        spawnedGravity.ActivateAura(true);
+    }
+
+    Vector2 GetGravityAim() {
+        Vector2 aim = Camera.main.ScreenToWorldPoint(Input.mousePosition) - spawnedGravity.transform.position;
+        return aim;
+    }
+
+    void AimGravity() {
+        Vector2 aim = GetGravityAim();
+        float rad = aim.magnitude;
+        aim = aim.normalized;
+        float arrowDir = Vector2.Angle(aim, Vector2.down);
+        if (aim.x > 0) arrowDir = 360 - arrowDir;
+        spawnedGravity.GetComponent<SpriteRenderer>().material.SetFloat("_ArrowAngle", arrowDir * 3.14f / 180);
+        spawnedGravity.SetRadius(rad);
+    }
+
+    void ActivateSpawnedGravity() {
+        AimGravity();
+        Vector2 newGravDirection = GetGravityAim().normalized;
+        spawnedGravity.AlterGravity(newGravDirection);
+        Destroy(spawnedGravity.gameObject);
+        spawnedGravity = null;
     }
 }

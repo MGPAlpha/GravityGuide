@@ -233,7 +233,7 @@ public class Player : GravityObject
     public virtual void ActivateGravity(bool self) {
         Vector2 newGravityDir = GetAim();
         if (self) personalGravity = newGravityDir * personalGravity.magnitude;
-        aura.GetComponent<Aura>().AlterGravity(Physics.gravity.magnitude * newGravityDir);
+        aura.GetComponent<Aura>().AlterGravity(newGravityDir);
     }
 
     private void CheckGround()
