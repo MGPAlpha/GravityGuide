@@ -190,6 +190,8 @@ public class PlayerDebugController : MonoBehaviour
                 GUILayout.Label("WASD: Move (Free Movement)");
                 GUILayout.Label("Shift: Move Faster (Free Movement)");
             }
+            GUILayout.Label("[: Previous Teleport Point");
+            GUILayout.Label("]: Next Teleport Point");
         }
     }
 }
