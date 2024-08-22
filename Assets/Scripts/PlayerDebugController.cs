@@ -154,4 +154,19 @@ public class PlayerDebugController : MonoBehaviour
         Destroy(spawnedGravity.gameObject);
         spawnedGravity = null;
     }
+
+    private void OnGUI() {
+        if (debugMode) {
+            GUILayout.Label("Debug mode active");
+            GUILayout.Label("P: Pause; Currently " + (paused ? "Paused" : "Unpaused"));
+            GUILayout.Label("C: Spawn Crate");
+            GUILayout.Label("O: Open Door/Barrier");
+            GUILayout.Label("G (" + (spawnedGravity ? "Drag Release" : "Hold") + "): Adjust Gravity");
+            GUILayout.Label("M: Toggle Free Movement");
+            if (freeMovement) {
+                GUILayout.Label("WASD: Move (Free Movement)");
+                GUILayout.Label("Shift: Move Faster (Free Movement)");
+            }
+        }
+    }
 }
