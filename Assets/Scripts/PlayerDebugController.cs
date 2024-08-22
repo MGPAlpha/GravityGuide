@@ -21,6 +21,7 @@ public class PlayerDebugController : MonoBehaviour
     private bool paused = false;
     private bool freeMovement = false;
     private Aura spawnedGravity;
+    private int currTeleportIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,12 @@ public class PlayerDebugController : MonoBehaviour
                 Debug.Log("Activating new grav");
                 ActivateSpawnedGravity();
             }
+            if (Input.GetKeyDown(KeyCode.LeftBracket)) {
+                TeleportPrevious();
+            }
+            if (Input.GetKeyDown(KeyCode.RightBracket)) {
+                TeleportNext();
+            }
         }
         if (freeMovement) {
             Vector3 movementDirection = Vector3.zero;
@@ -74,8 +81,6 @@ public class PlayerDebugController : MonoBehaviour
             bool hiSpeed = Input.GetKey(KeyCode.LeftShift);
             float speedMul = hiSpeed ? hiSpeedMultiplier : 1;
             transform.position += movementDirection * freeMovementSpeed * speedMul * Time.unscaledDeltaTime;
-            Debug.Log("name " + transform.gameObject.name);
-            Debug.Log("dir " + movementDirection);
         }
         if (spawnedGravity) {
             AimGravity();
@@ -153,6 +158,24 @@ public class PlayerDebugController : MonoBehaviour
         spawnedGravity.AlterGravity(newGravDirection);
         Destroy(spawnedGravity.gameObject);
         spawnedGravity = null;
+    }
+
+    void TeleportPrevious() {
+        bool canUseIndex = DebugTeleportPoint.CloseToTeleportPoint(transform.position, currTeleportIndex);
+        int prevIndex = canUseIndex ? DebugTeleportPoint.GetPreviousTeleportPoint(currTeleportIndex) : DebugTeleportPoint.GetPreviousTeleportPoint(transform.position);
+        currTeleportIndex = prevIndex;
+        Teleport(DebugTeleportPoint.GetTeleportPoint(currTeleportIndex));
+    }
+
+    void TeleportNext() {
+        bool canUseIndex = DebugTeleportPoint.CloseToTeleportPoint(transform.position, currTeleportIndex);
+        int nextIndex = canUseIndex ? DebugTeleportPoint.GetNextTeleportPoint(currTeleportIndex) : DebugTeleportPoint.GetNextTeleportPoint(transform.position);
+        currTeleportIndex = nextIndex;
+        Teleport(DebugTeleportPoint.GetTeleportPoint(currTeleportIndex));
+    }
+
+    void Teleport(Vector2 pos) {
+        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
     }
 
     private void OnGUI() {
