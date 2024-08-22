@@ -85,5 +85,9 @@ public class DebugTeleportPoint : MonoBehaviour
         if ((pointPos - pos).magnitude <= point.closeRadius) return true;
         return false;
     }
+
+    private void OnDrawGizmos() {
+        Gizmos.DrawIcon(transform.position, "Teleport Gizmo");
+    }
     
 }
