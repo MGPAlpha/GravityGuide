@@ -49,6 +49,9 @@ public class PlayerDebugController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.M)) {
                 ToggleFreeMovement();
             }
+            if (Input.GetKeyDown(KeyCode.U)) {
+                UnlockPlayerAbilities();
+            }
             if (Input.GetKeyDown(KeyCode.C)) {
                 SpawnCrate();
             }
@@ -62,7 +65,6 @@ public class PlayerDebugController : MonoBehaviour
                 SpawnGravity();
             }
             if (spawnedGravity && Input.GetKeyUp(KeyCode.G)) {
-                Debug.Log("Activating new grav");
                 ActivateSpawnedGravity();
             }
             if (Input.GetKeyDown(KeyCode.LeftBracket)) {
@@ -118,6 +120,13 @@ public class PlayerDebugController : MonoBehaviour
             _player.enabled = true;
         }
     }
+
+    void UnlockPlayerAbilities() {
+        _player.EnableControls();
+        _player.EnablePrimary();
+        _player.EnableSecondary();
+    }
+
     void SpawnCrate() {
         Vector2 spawnPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Instantiate(cratePrefab, spawnPos, Quaternion.identity);
@@ -200,6 +209,7 @@ public class PlayerDebugController : MonoBehaviour
         if (debugMode) {
             GUILayout.Label("Debug mode active");
             GUILayout.Label("P: Pause; Currently " + (paused ? "Paused" : "Unpaused"));
+            GUILayout.Label("U: Unlock Player Abilities");
             GUILayout.Label("C: Spawn Crate");
             GUILayout.Label("O: Open Door/Barrier");
             GUILayout.Label("I: Force Interact");
