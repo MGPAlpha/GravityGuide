@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class PlayerDebugController : MonoBehaviour
@@ -34,9 +33,15 @@ public class PlayerDebugController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #if DEBUG
         if (Input.GetKeyDown(KeyCode.Backslash)) {
             ToggleDebugMode();
         }
+        #else
+        if (debugMode && Input.GetKeyDown(KeyCode.Backslash)) {
+            ToggleDebugMode();
+        }
+        #endif
         if (debugMode) {
             if (Input.GetKeyDown(KeyCode.P)) {
                 TogglePause();
@@ -49,6 +54,9 @@ public class PlayerDebugController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.O)) {
                 OpenBarrier();
+            }
+            if (Input.GetKeyDown(KeyCode.I)) {
+                ForceInteract();
             }
             if (Input.GetKeyDown(KeyCode.G)) {
                 SpawnGravity();
@@ -87,7 +95,7 @@ public class PlayerDebugController : MonoBehaviour
         }
     }
 
-    void ToggleDebugMode() {
+    public void ToggleDebugMode() {
         debugMode = !debugMode;
         if (!debugMode) {
             if (paused) TogglePause();
@@ -124,6 +132,16 @@ public class PlayerDebugController : MonoBehaviour
             }
             if (col.TryGetComponent<LightBarrier>(out LightBarrier b)) {
                 b.TurnOff();
+            }
+        }
+    }
+
+    void ForceInteract() {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] colliders = Physics2D.OverlapPointAll(mousePos);
+        foreach (Collider2D col in colliders) {
+            if (col.TryGetComponent<Interactible>(out Interactible d)) {
+                d.Interact();
             }
         }
     }
@@ -184,6 +202,7 @@ public class PlayerDebugController : MonoBehaviour
             GUILayout.Label("P: Pause; Currently " + (paused ? "Paused" : "Unpaused"));
             GUILayout.Label("C: Spawn Crate");
             GUILayout.Label("O: Open Door/Barrier");
+            GUILayout.Label("I: Force Interact");
             GUILayout.Label("G (" + (spawnedGravity ? "Drag Release" : "Hold") + "): Adjust Gravity");
             GUILayout.Label("M: Toggle Free Movement");
             if (freeMovement) {

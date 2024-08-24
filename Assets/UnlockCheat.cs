@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UnlockCheat : MonoBehaviour
 {
@@ -33,12 +34,13 @@ public class UnlockCheat : MonoBehaviour
             if (Input.GetKeyDown(code[codeProgress])) {
                 codeProgress++;
                 if (codeProgress == code.Length) {
-                    PlayerPrefs.SetInt("maxLevelProgress", 12);
-                    MenuManager._mm.Menu();
+                    onCheatActivate.Invoke();
                 }
             } else {
                 codeProgress = 0;
             }
         }
     }
+
+    [SerializeField] private UnityEvent onCheatActivate;
 }
