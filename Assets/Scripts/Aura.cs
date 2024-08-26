@@ -7,7 +7,7 @@ public class Aura : MonoBehaviour
     List<GravityObject> currentGravityObjects = new List<GravityObject>();
 
     [SerializeField] private float fullSize;
-    [SerializeField] private float inactiveSize;
+    [SerializeField] private float inactiveSizeRatio;
     [SerializeField] private float activationTime = .5f;
 
     private float activation = 0;
@@ -31,14 +31,14 @@ public class Aura : MonoBehaviour
         activation += Time.unscaledDeltaTime * (auraActive ? 1 : -1);
         activation = Mathf.Clamp(activation, 0, activationTime);
         float percentActive = activation / activationTime;
-        transform.localScale = new Vector3(1,1,0) * Mathf.SmoothStep(inactiveSize, fullSize, percentActive);
+        transform.localScale = new Vector3(1,1,0) * Mathf.SmoothStep(inactiveSizeRatio * fullSize, fullSize, percentActive);
         GetComponent<SpriteRenderer>().color = new Color(color.r,color.g,color.b, Mathf.SmoothStep(0,1,percentActive)*color.a);
     }
 
     public void AlterGravity(Vector2 newGravity) {
         foreach (GravityObject g in currentGravityObjects) {
             if (!g) continue;
-            g.personalGravity = newGravity;
+            g.personalGravity = g.personalGravity.magnitude * newGravity;
         }
     }
 
@@ -62,5 +62,9 @@ public class Aura : MonoBehaviour
         if (affectedLayers == (affectedLayers | (1 << other.gameObject.layer))) {
             currentGravityObjects.Remove(other.GetComponent<GravityObject>());
         }
+    }
+
+    public void SetRadius(float radius) {
+        fullSize =  2 * radius;
     }
 }

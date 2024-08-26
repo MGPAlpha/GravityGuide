@@ -70,6 +70,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void UnlockAllLevels() {
+        PlayerPrefs.SetInt("maxLevelProgress", 12);
+        Menu();
+    }
+
     public void Play() {
 
         //Put this in whenever you want to load a scene
