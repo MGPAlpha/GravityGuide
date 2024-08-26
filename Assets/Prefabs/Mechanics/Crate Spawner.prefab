@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3787644340490748049}
   - component: {fileID: 3787644340490748048}
   - component: {fileID: 3787644340490748060}
+  - component: {fileID: 6465843323961320931}
   m_Layer: 8
   m_Name: Crate Spawner
   m_TagString: Untagged
@@ -105,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3ac36c78095676860b1090af2f722a50, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4c31fbcb9711d2f0a122d030fa7f709, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3787644340490748051}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -132,8 +133,8 @@ BoxCollider2D:
   m_Offset: {x: -0.625, y: 0.375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    pivot: {x: 0.5, y: 0.75}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +150,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3787644340490748051}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -158,8 +159,8 @@ BoxCollider2D:
   m_Offset: {x: 0.625, y: 0.375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    pivot: {x: 0.5, y: 0.75}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,3 +185,44 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 3787644339637792466}
   ownedCrate: {fileID: 0}
+--- !u!60 &6465843323961320931
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787644340490748051}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.75}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1, y: 1}
+      - {x: -1, y: -0.0625}
+      - {x: -0.625, y: -0.0625}
+      - {x: -0.625, y: -1}
+      - {x: -1, y: -1}
+      - {x: -1, y: -1.1875}
+      - {x: -0.4375, y: -1.1875}
+      - {x: -0.4375, y: 1}
+      - {x: 0.4375, y: 1}
+      - {x: 0.4375, y: -1.1875}
+      - {x: 1, y: -1.1875}
+      - {x: 1, y: -1}
+      - {x: 0.625, y: -1}
+      - {x: 0.625, y: -0.0625}
+      - {x: 1, y: -0.0625}
+      - {x: 1, y: 1}
