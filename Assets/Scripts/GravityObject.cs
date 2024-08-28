@@ -32,6 +32,10 @@ public class GravityObject : MonoBehaviour
         rb.velocity += personalGravity * Time.fixedDeltaTime;
     }
 
+    public void UpdateGravityDirection(Vector2 dir) {
+        personalGravity = personalGravity.magnitude * dir.normalized;
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (aud && hitEffects.Length > 0) {

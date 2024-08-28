@@ -8,6 +8,7 @@ public class CrateSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPoint; 
 
     [SerializeField] private GameObject ownedCrate;
+    [SerializeField] private GameObject preparedCrate;
 
     private Animator _anim;
     
@@ -32,11 +33,31 @@ public class CrateSpawner : MonoBehaviour
         }
     }
 
-    public void Spawn() {
-        open = !open;
+    public void NotifyReadyToClose() {
+        open = false;
         _anim.SetFloat("opening", open ? 1 : -1);
         _anim.SetFloat("closing", !open ? 1 : -1);
+    }
+
+    public void NotifyFullyClosed() {
+        PrepareNextCrate();
+    }
+
+    public void Spawn() {
+        open = true;
+        _anim.SetFloat("opening", open ? 1 : -1);
+        _anim.SetFloat("closing", !open ? 1 : -1);
+        if (!preparedCrate) {
+            PrepareNextCrate();
+        }
         DestroyOwned();
-        ownedCrate = Instantiate(cratePrefab, spawnPoint.position, spawnPoint.rotation);
+        preparedCrate.GetComponent<GravityObject>().UpdateGravityDirection(transform.TransformDirection(Vector2.down));
+        ownedCrate = preparedCrate;
+        preparedCrate = null;
+    }
+
+    void PrepareNextCrate() {
+        preparedCrate = Instantiate(cratePrefab, spawnPoint.position, spawnPoint.rotation);
+        preparedCrate.GetComponent<GravityObject>().personalGravity = transform.TransformDirection(Vector2.down);
     }
 }
