@@ -15,6 +15,8 @@ public class HighlightSprite : MonoBehaviour
         sp.material.SetInt("_Outline", active? 1 : 0);
         if (anim) {
             anim.SetBool("Open", active);
+            anim.SetFloat("opening", active ? 1 : -1);
+            anim.SetFloat("closing", active ? -1 : 1);
             anim.SetFloat("speedMul", active ? 1 : -1);
         }
     }
