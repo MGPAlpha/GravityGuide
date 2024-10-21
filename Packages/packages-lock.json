@@ -6,8 +6,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.2d.common": "4.2.0",
-        "com.unity.mathematics": "1.1.0",
         "com.unity.2d.sprite": "1.0.0",
+        "com.unity.mathematics": "1.1.0",
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.uielements": "1.0.0"
       },
@@ -43,8 +43,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.2d.common": "4.2.0",
-        "com.unity.2d.animation": "5.2.0",
-        "com.unity.2d.sprite": "1.0.0"
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.2d.animation": "5.2.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -59,9 +59,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.2d.common": "4.2.0",
         "com.unity.2d.path": "4.0.2",
+        "com.unity.2d.common": "4.2.0",
+        "com.unity.mathematics": "1.1.0",
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -83,6 +83,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "hash": "953c499971a9f483e3a031498ac09167e390fe26"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.6.17",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
       "version": "2.0.4",
@@ -147,8 +154,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.1.0",
-        "com.unity.render-pipelines.core": "10.10.1",
-        "com.unity.shadergraph": "10.10.1"
+        "com.unity.shadergraph": "10.10.1",
+        "com.unity.render-pipelines.core": "10.10.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -164,8 +171,8 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "10.10.1",
-        "com.unity.searcher": "4.3.2"
+        "com.unity.searcher": "4.3.2",
+        "com.unity.render-pipelines.core": "10.10.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -210,9 +217,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
