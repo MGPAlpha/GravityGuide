@@ -20,12 +20,14 @@ public class EventTimer : MonoBehaviour
     [SerializeField] private AudioClip timerDing;
 
     private AudioSource _as;
+    private SpriteRenderer _re;
 
 
     void Start()
     {
         if (runAtStart) StartTimer();
         TryGetComponent<AudioSource>(out _as);
+        TryGetComponent<SpriteRenderer>(out _re);
     }
 
     public void StartTimer() {
@@ -51,11 +53,22 @@ public class EventTimer : MonoBehaviour
                 }
             }
         }
+        // Debug.Log(_re);
+        // Debug.Log(_re.enabled);
+        if (_re && _re.enabled) {
+            // Debug.Log("changing material");
+            if (timerOn) {
+                _re.material.SetFloat("_Fill", timeElapsed / timerLength);
+                Debug.Log("setting fill to " + (timeElapsed / timerLength));
+            } else {
+                _re.material.SetFloat("_Fill", 1f);
+            }
+        }
     }
 
     private void OnDrawGizmos()
     {
         CustomGizmos.DrawEventTargets(transform.position, onTimeout, Color.yellow);
-        Gizmos.DrawIcon(transform.position, "Timer");
+        if (!TryGetComponent<SpriteRenderer>(out SpriteRenderer re) || !re.enabled) Gizmos.DrawIcon(transform.position, "Timer");
     }
 }
