@@ -61,7 +61,7 @@ public class EventTimer : MonoBehaviour
                 _re.material.SetFloat("_Fill", timeElapsed / timerLength);
                 Debug.Log("setting fill to " + (timeElapsed / timerLength));
             } else {
-                _re.material.SetFloat("_Fill", 1f);
+                _re.material.SetFloat("_Fill", 0f);
             }
         }
     }
