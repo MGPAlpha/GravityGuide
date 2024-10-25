@@ -11,11 +11,14 @@ public class CameraController : MonoBehaviour
     private float cameraStiffness;
 
     private CinemachineCameraOffset cameraOffset;
+    private CinemachineVirtualCamera vcam;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraOffset = GetComponent<CinemachineCameraOffset>();
+        vcam = GetComponent<CinemachineVirtualCamera>();
+        vcam.Follow = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
