@@ -92,6 +92,7 @@ SpriteAtlas:
   - {fileID: -6410872971040062882, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
   - {fileID: 7281047970656933779, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
   - {fileID: -8723211394617959539, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
+  - {fileID: -7697986963564566792, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
   - {fileID: -7551845090507707802, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
   - {fileID: 2007944712799078003, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
   - {fileID: -2471580215248539735, guid: f0a0f6b5578a7dcf1a70304427386cf0, type: 3}
@@ -232,6 +233,7 @@ SpriteAtlas:
   - Moon Cave Tiles_20
   - Moon Cave Tiles_23
   - Moon Cave Tiles_22
+  - Moon Cave Tiles_48
   - Moon Cave Tiles_43
   - Moon Cave Tiles_42
   - Moon Cave Tiles_41
