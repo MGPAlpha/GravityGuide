@@ -18,7 +18,9 @@ public class CameraController : MonoBehaviour
     {
         cameraOffset = GetComponent<CinemachineCameraOffset>();
         vcam = GetComponent<CinemachineVirtualCamera>();
-        vcam.Follow = GameObject.Find("Player").transform;
+        if (!vcam.Follow) {
+            vcam.Follow = GameObject.Find("Player").transform;
+        }
     }
 
     // Update is called once per frame
