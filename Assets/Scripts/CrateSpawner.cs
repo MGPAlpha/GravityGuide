@@ -57,6 +57,7 @@ public class CrateSpawner : MonoBehaviour
     }
 
     void PrepareNextCrate() {
+        if (!cratePrefab) return;
         preparedCrate = Instantiate(cratePrefab, spawnPoint.position, spawnPoint.rotation);
         preparedCrate.GetComponent<GravityObject>().personalGravity = transform.TransformDirection(Vector2.down);
     }
