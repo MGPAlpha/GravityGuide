@@ -38,7 +38,7 @@ public class GravityObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (aud && hitEffects.Length > 0) {
+        if (aud && aud.enabled && hitEffects.Length > 0) {
             aud.PlayOneShot(hitEffects[Random.Range(0,hitEffects.Length)]);
         }
     }

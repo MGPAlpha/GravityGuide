@@ -242,7 +242,6 @@ public class Player : GravityObject
         bool canBeGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         if (canBeGrounded) {
             float lateralSpeed = Mathf.Abs(Vector2.Dot(rb.velocity, Vector2.Perpendicular(personalGravity.normalized)));
-            Debug.Log("Lateral speed: " + lateralSpeed);
             if (lateralSpeed < maxLateralSpeedForGrounding) {
                 isGrounded = true;
             } else {
