@@ -35,6 +35,7 @@ public class UnlockCheat : MonoBehaviour
                 codeProgress++;
                 if (codeProgress == code.Length) {
                     onCheatActivate.Invoke();
+                    codeProgress = 0;
                 }
             } else {
                 codeProgress = 0;
